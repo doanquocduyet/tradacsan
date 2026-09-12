@@ -89,7 +89,7 @@ nav.main>div:hover>a,nav.main>div.on>a{border-bottom-color:var(--ink)}
 .mega{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-top:1px solid var(--line);display:none;z-index:55}
 nav.main>div:hover .mega,nav.main>div:focus-within .mega{display:block}
 .mega .in{max-width:var(--container);margin:0 auto;padding:38px var(--pad) 44px;display:grid;grid-template-columns:1fr 260px;gap:40px}
-.mcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:34px 26px}
+.mcols{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:26px;align-items:start}
 .mcols h4{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-t);font-weight:700;margin-bottom:14px}
 .mcols ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .mcols a{font-size:14px;color:var(--green-t)}
@@ -143,6 +143,8 @@ nav.main>div:hover .mega,nav.main>div:focus-within .mega{display:block}
 /* ---------- 4 Ô BỘ SƯU TẬP ---------- */
 .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 18px}
 @media(min-width:900px){.tiles{grid-template-columns:repeat(4,1fr);gap:26px}}
+.tiles a{display:flex;flex-direction:column}
+.tiles a .lastline{margin-top:auto;padding-top:12px}
 .tiles a .im{aspect-ratio:1;overflow:hidden;border-radius:6px;background:#fff}
 .tiles a img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .tiles a:hover img{transform:scale(1.04)}
@@ -160,6 +162,7 @@ nav.main>div:hover .mega,nav.main>div:focus-within .mega{display:block}
 @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:40px 20px}}
 @media(min-width:1060px){.grid{grid-template-columns:repeat(4,1fr);gap:46px 22px}}
 .pcard{display:flex;flex-direction:column}
+@media(min-width:760px){.pcard .exc{min-height:4.5em}}
 .pcard .im{position:relative;display:block;aspect-ratio:1;background:#fff;overflow:hidden}
 .pcard .im img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:opacity .35s}
 .pcard .im img.b{opacity:0}
@@ -320,6 +323,10 @@ footer .mail button{padding:0 14px;color:#fff}
 .pbody .txt h2{font-size:22px;font-weight:600;margin:28px 0 12px}
 .alt h4{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-t);font-weight:700;margin-bottom:14px}
 .alt .g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.alt .pcard .tagl,.alt .pcard .tagr,.alt .pcard .exc,.alt .pcard .hr,.alt .pcard .from{display:none}
+.alt .pcard h3{margin-top:10px;font-size:13.5px}
+.alt .pcard .price{font-size:12.5px;margin-top:4px}
+.alt .pcard .exc{min-height:0}
 .region{display:grid;grid-template-columns:1fr;gap:26px;padding:40px 0}
 @media(min-width:860px){.region{grid-template-columns:1fr 1fr;gap:50px;align-items:center}}
 .region .im{aspect-ratio:4/3;overflow:hidden;background:#fff}
@@ -386,10 +393,10 @@ footer .mail button{padding:0 14px;color:#fff}
 .atext h2{font-size:23px;font-weight:600;margin:28px 0 12px}
 
 /* ---------- KHỐI NỘI DUNG CHUNG ---------- */
-.split{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:clamp(30px,4vw,56px) 0}
+.split{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:clamp(26px,3vw,44px) 0}
 @media(min-width:860px){.split{grid-template-columns:1fr 1fr;gap:56px}}
 .split.rev .im{order:2}
-.split .im{aspect-ratio:4/3;overflow:hidden;background:#fff}
+.split .im{aspect-ratio:3/2;max-height:330px;overflow:hidden;background:#fff}
 .split .im img{width:100%;height:100%;object-fit:cover}
 .split h2{font-size:clamp(22px,2.6vw,30px);font-weight:600;margin-bottom:12px}
 .split p{font-size:13.5px;color:var(--green-t);margin-bottom:12px}
@@ -548,10 +555,7 @@ body.has-sticky{padding-bottom:72px}
     <div>
       <h4>Theo dõi</h4>
       <div class="soc" id="fsoc"></div>
-      <div class="tp">
-        <div class="row"><span class="stars sq"><i></i><i></i><i></i><i></i><i></i></span></div>
-        <p class="sub">Khách hàng chấm 4,8/5 — dựa trên đánh giá thật tại cửa hàng.</p>
-      </div>
+      <div class="tp" id="ftp"></div>
     </div>
     <div><h4>Cửa hàng</h4><ul id="fshop"></ul></div>
     <div><h4>Về chúng tôi</h4><ul id="fabout"></ul></div>
@@ -559,7 +563,7 @@ body.has-sticky{padding-bottom:72px}
     <div class="sign">
       <h4>Giảm giá cho đơn đầu tiên</h4>
       <p>Đăng ký nhận tin: lô trà mới, hướng dẫn pha và ưu đãi riêng cho người đăng ký.</p>
-      <form class="mail" onsubmit="event.preventDefault();toast('Đã ghi nhận email. Cảm ơn chú!');this.reset()">
+      <form class="mail" onsubmit="event.preventDefault();toast('Đã ghi nhận email. Cảm ơn bạn!');this.reset()">
         <input type="email" required placeholder="Email của bạn" aria-label="Email">
         <button type="submit" aria-label="Đăng ký"><svg class="ico" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg></button>
       </form>
@@ -806,11 +810,11 @@ const COLS = {
  "mau-thu":     { t:"Mẫu thử 10g", d:"Uống trước rồi mới mua gói lớn. Mỗi gói 10g, đủ pha 2 lần.", hero:"sampler", f:p=>isTea(p)&&!!sample(p) },
  "lo-gioi-han": { t:"Lô giới hạn", d:"Những lô làm số lượng nhỏ, hết là dừng — không làm lại cùng một lô.", hero:"shan-tuyet-hoa-1", f:p=>p.status==="limited"||(p.tags||[]).includes("limited") },
  "lo-moi":      { t:"Lô mới về", d:"Trà vừa nhập kho trong mùa này.", hero:"tra-hoa-moc-1", f:p=>(p.tags||[]).includes("new") },
- "dung-cu":     { t:"Dụng cụ pha trà", d:"Ấm, chén tống, lọc trà — chọn theo loại trà và cách chú hay pha.", hero:"cup", f:p=>p.cat==="dung-cu" },
+ "dung-cu":     { t:"Dụng cụ pha trà", d:"Ấm, chén tống, lọc trà — chọn theo loại trà và cách bạn hay pha.", hero:"cup", f:p=>p.cat==="dung-cu" },
  "qua-tang":    { t:"Quà tặng", d:"Hộp quà và bộ mẫu thử, gói sẵn kèm thiệp — gửi được ngay.", hero:"gift-box", f:p=>p.cat==="qua-tang" },
  "ban-chay":    { t:"Bán chạy", d:"Những loại khách quay lại mua nhiều nhất.", hero:"o-long-thanh-1", f:p=>(p.tags||[]).includes("bestseller") }
 };
-const feelCol  = k => ({ t:(FEELS.find(f=>f[0]===k)||[])[1]||"Theo cảm giác", d:"Chọn theo cách chú muốn uống hôm nay, không cần biết tên trà.", hero:"o-long-thanh-1", f:p=>{const f=FEELS.find(x=>x[0]===k); return f && f[2].some(t=>(p.tags||[]).includes(t));} });
+const feelCol  = k => ({ t:(FEELS.find(f=>f[0]===k)||[])[1]||"Theo cảm giác", d:"Chọn theo cách bạn muốn uống hôm nay, không cần biết tên trà.", hero:"o-long-thanh-1", f:p=>{const f=FEELS.find(x=>x[0]===k); return f && f[2].some(t=>(p.tags||[]).includes(t));} });
 const flavCol  = k => ({ t:(FLAVS.find(f=>f[0]===k)||[])[1]||"Theo hương vị", d:"Lọc theo hướng hương chính của lô trà.", hero:"shan-tuyet-hoa-1", f:p=>(p.flavor||[]).includes(k) });
 const regCol   = k => ({ t:(REGIONS.find(f=>f[0]===k)||[])[1]||"Theo vùng trồng", d:"Trà theo vùng trồng.", hero:"tra-xanh-son-1", f:p=>p.origin===k });
 
@@ -1019,7 +1023,7 @@ function homeHtml(){
     '<div class="hdots">' + SLIDES.map((s,i) => '<button aria-pressed="' + (i===0) + '" onclick="goSlide(' + i + ')" aria-label="Ảnh ' + (i+1) + '"></button>').join("") + '</div>' +
   '</section>' +
 
-  '<div class="trust"><b>Trà thật, lô thật</b><span class="stars"><i></i><i></i><i></i><i></i><i></i></span>' +
+  '<div class="trust"><b>Trà thật, lô thật</b>' +
     '<span>Mỗi lô đều uống thử trước khi bán — lô nào không đạt thì không lên kệ.</span></div>' +
 
   '<section class="sec"><div class="wrap"><div class="tiles">' +
@@ -1050,7 +1054,7 @@ function homeHtml(){
       '<a href="' + b.href + '"><div class="im" style="aspect-ratio:4/3"><img src="' + img(b.img) + '" alt="" loading="lazy"></div>' +
       '<h3 style="font-size:20px">' + esc(b.t) + '</h3>' +
       '<p class="center" style="margin-top:8px;font-size:13px;color:var(--green-t)">' + esc(b.d) + '</p>' +
-      '<p class="center" style="margin-top:12px"><span class="lnk">Tìm hiểu</span></p></a>').join("") +
+      '<p class="center lastline"><span class="lnk">Tìm hiểu</span></p></a>').join("") +
   '</div></div></section>' +
 
   '<section class="sec" style="padding-top:0"><div class="wrap center">' +
@@ -1108,10 +1112,10 @@ function colHtml(handle, sub){
     grid(shown) + pagerHtml(colPage, pages) +
     seoBlock(col.t, [
       esc(col.d),
-      'Chúng tôi mua trà theo lô nhỏ từ người làm trà, uống thử từng lô rồi mới quyết định bán. Mỗi lô đều ghi rõ mùa hái, cách làm và cách pha — chú biết mình đang uống gì.',
+      'Chúng tôi mua trà theo lô nhỏ từ người làm trà, uống thử từng lô rồi mới quyết định bán. Mỗi lô đều ghi rõ mùa hái, cách làm và cách pha — bạn biết mình đang uống gì.',
       ["Chưa biết bắt đầu từ đâu?", [
         'Mua <a href="#/c/mau-thu">mẫu thử 10g</a> trước. Mỗi gói đủ pha hai lần, uống hết rồi mới quyết gói lớn — rẻ hơn mua nhầm 100g.',
-        'Hoặc chọn theo cách chú muốn uống hôm nay: ' + FEELS.map(f => '<a href="#/c/cam-giac/' + f[0] + '">' + f[1] + '</a>').join(", ") + '.'
+        'Hoặc chọn theo cách bạn muốn uống hôm nay: ' + FEELS.map(f => '<a href="#/c/cam-giac/' + f[0] + '">' + f[1] + '</a>').join(", ") + '.'
       ]]
     ]) +
   '</div>');
@@ -1243,7 +1247,7 @@ function tabBody(p){
   return '<p>' + esc(p.desc) + '</p>' +
          (has(p.why) ? '<p>' + esc(p.why) + '</p>' : "") +
          (has(p.fit) ? '<h2>Hợp với ai</h2><p>' + esc(p.fit) + '</p>' : "") +
-         (Object.keys(p.rec || {}).length ? '<h2>Nếu chú thích loại này</h2>' +
+         (Object.keys(p.rec || {}).length ? '<h2>Nếu bạn thích loại này</h2>' +
             Object.keys(p.rec).map(s => { const q = byslug(s); return q ? '<p><a href="#/p/' + s + '">' + esc(q.name) + '</a> — ' + esc(p.rec[s]) + '</p>' : ""; }).join("") : "");
 }
 function reviewsHtml(p){
@@ -1325,8 +1329,8 @@ function storyHtml(){
 
   '<div class="split"><div class="im"><img src="' + img("cup") + '" alt=""></div>' +
     '<div><h2>Những từ chúng tôi không dùng</h2>' +
-      '<p>Không "thượng hạng", không "quốc trà", không "bí truyền". Những từ đó không nói cho chú biết trà có hợp với mình không.</p>' +
-      '<p>Thay vào đó chúng tôi ghi: hái mùa nào, làm thế nào, vị ra sao, pha bao nhiêu độ. Đủ để chú tự quyết.</p></div></div>' +
+      '<p>Không "thượng hạng", không "quốc trà", không "bí truyền". Những từ đó không nói cho bạn biết trà có hợp với mình không.</p>' +
+      '<p>Thay vào đó chúng tôi ghi: hái mùa nào, làm thế nào, vị ra sao, pha bao nhiêu độ. Đủ để bạn tự quyết.</p></div></div>' +
 
   '<div class="banner" style="margin:20px 0 60px">' + (SITE.photos ? '<img src="' + img("shan-tuyet-hoa-1") + '" alt="">' : "") + '' +
     '<div class="in"><h2>Chưa biết bắt đầu từ đâu?</h2><p>Mẫu thử 10g, ba hướng vị khác nhau. Uống hết rồi mới quyết gói lớn.</p>' +
@@ -1357,7 +1361,7 @@ function brewHtml(){
   '<h2 style="font-size:24px;margin:44px 0 6px">Ba lỗi hay gặp</h2>' +
   '<div class="faq">' + [
     ["Dùng nước sôi cho trà xanh","Trà xanh lá non, gặp nước 100°C là chát ngay nước đầu. Đun sôi rồi để nguội 3–4 phút, hoặc rót qua một chén khác cho hạ nhiệt."],
-    ["Để trà ngâm trong ấm","Hết giờ là rót hết ra chén tống. Lá còn nằm trong nước thì nước sau sẽ đắng, dù chú pha đúng thời gian."],
+    ["Để trà ngâm trong ấm","Hết giờ là rót hết ra chén tống. Lá còn nằm trong nước thì nước sau sẽ đắng, dù bạn pha đúng thời gian."],
     ["Cho ít trà rồi ngâm bù","Ít trà mà ngâm lâu ra vị loãng nhưng vẫn chát. Đúng tỷ lệ rồi rút ngắn thời gian mới là cách sửa."]
   ].map((x,i) =>
     '<div><button class="ah" onclick="togAcc(this)"><span>' + esc(x[0]) + '</span>' + ICO.chev + '</button><div class="ab' + (i===0?" on":"") + '">' + esc(x[1]) + '</div></div>').join("") + '</div>' +
@@ -1378,15 +1382,15 @@ function rewardsHtml(){
 
   '<div class="perks">' +
     '<div><svg viewBox="0 0 24 24"><path d="m3 12 9-9 9 9-9 9-9-9Z"/><circle cx="12" cy="12" r="2.5"/></svg><h4>Giảm thêm ' + Math.round(SITE.subDiscount*100) + '%</h4><p>Áp dụng cho mọi đơn giao định kỳ.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Chọn nhịp giao</h4><p>1, 2 hoặc 3 tháng một lần, tùy chú uống nhanh hay chậm.</p></div>' +
+    '<div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Chọn nhịp giao</h4><p>1, 2 hoặc 3 tháng một lần, tùy bạn uống nhanh hay chậm.</p></div>' +
     '<div><svg viewBox="0 0 24 24"><path d="M5 4h14v16l-7-4-7 4V4Z"/></svg><h4>Đổi loại bất cứ lúc nào</h4><p>Thêm, bớt hoặc đổi sang lô khác trước ngày giao.</p></div>' +
     '<div><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6l12 12"/></svg><h4>Dừng lúc nào cũng được</h4><p>Không ràng buộc, không phí hủy, không gọi điện mời chào.</p></div>' +
   '</div>' +
 
   '<div class="split"><div class="im"><img src="' + img("o-long-thanh-1") + '" alt=""></div>' +
     '<div><h2>Giao định kỳ hoạt động thế nào</h2>' +
-      '<p>Chọn loại trà và nhịp giao ở trang sản phẩm. Đến hẹn, chúng tôi đóng gói lô đang có và gửi đi — chú không phải đặt lại.</p>' +
-      '<p>Trước mỗi lần giao, chú nhận tin nhắn báo trước 3 ngày. Muốn hoãn, đổi loại hoặc dừng thì nhắn lại là xong.</p>' +
+      '<p>Chọn loại trà và nhịp giao ở trang sản phẩm. Đến hẹn, chúng tôi đóng gói lô đang có và gửi đi — bạn không phải đặt lại.</p>' +
+      '<p>Trước mỗi lần giao, bạn nhận tin nhắn báo trước 3 ngày. Muốn hoãn, đổi loại hoặc dừng thì nhắn lại là xong.</p>' +
       '<p style="margin-top:18px"><a class="btn" href="#/c/tra-la-roi">Chọn trà để bắt đầu</a></p></div></div>' +
 
   '<div class="split rev"><div class="im"><img src="' + img("sampler") + '" alt=""></div>' +
@@ -1409,7 +1413,7 @@ function tradeHtml(){
   '</div>' +
   '<div class="split"><div class="im"><img src="' + img("gift-box") + '" alt=""></div>' +
     '<div><h2>Gửi yêu cầu</h2>' +
-      '<p>Cho chúng tôi biết chú cần bao nhiêu, dùng vào việc gì và khi nào cần. Chúng tôi gửi lại bảng giá và mẫu thử trong 1 ngày làm việc.</p>' +
+      '<p>Cho chúng tôi biết bạn cần bao nhiêu, dùng vào việc gì và khi nào cần. Chúng tôi gửi lại bảng giá và mẫu thử trong 1 ngày làm việc.</p>' +
       contactForm("Gửi yêu cầu bán sỉ") + '</div></div>' +
   '<div style="height:40px"></div></div>');
 }
@@ -1417,9 +1421,9 @@ function tradeHtml(){
 /* ====================== LIÊN HỆ ====================== */
 function contactForm(btnLabel){
   return '<form onsubmit="event.preventDefault();toast(\'Đã gửi. Cháu sẽ liên hệ lại.\');this.reset()">' +
-    '<div class="field"><label>Tên</label><input required placeholder="Tên của chú"></div>' +
+    '<div class="field"><label>Tên</label><input required placeholder="Tên của bạn"></div>' +
     '<div class="field"><label>Số điện thoại hoặc email</label><input required placeholder="Để chúng tôi liên hệ lại"></div>' +
-    '<div class="field"><label>Nội dung</label><textarea rows="4" placeholder="Chú cần gì?"></textarea></div>' +
+    '<div class="field"><label>Nội dung</label><textarea rows="4" placeholder="Bạn cần gì?"></textarea></div>' +
     '<button class="btn" type="submit">' + esc(btnLabel) + '</button></form>';
 }
 function contactHtml(){
@@ -1429,7 +1433,7 @@ function contactHtml(){
   if(has(SITE.address)) info.push(["Địa chỉ", esc(SITE.address)]); else if(DEV) info.push(["Địa chỉ", ph("địa chỉ")]);
   return (
   '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Liên hệ</div>' +
-  '<div class="chead"><h1>Liên hệ</h1><p>Chưa biết chọn loại nào? Nhắn cho chúng tôi cách chú hay uống trà, chúng tôi gợi ý đúng hai hoặc ba loại — không gợi ý cả cửa hàng.</p></div>' +
+  '<div class="chead"><h1>Liên hệ</h1><p>Chưa biết chọn loại nào? Nhắn cho chúng tôi cách bạn hay uống trà, chúng tôi gợi ý đúng hai hoặc ba loại — không gợi ý cả cửa hàng.</p></div>' +
   '<div class="split" style="padding-top:0"><div><h2>Thông tin cửa hàng</h2>' +
     (info.length ? info.map(x => '<p><b>' + x[0] + ':</b> ' + x[1] + '</p>').join("") : '<p>Chúng tôi sẽ cập nhật thông tin liên hệ tại đây.</p>') +
     '<h2 style="margin-top:26px">Giờ mở cửa</h2>' + SITE.hours.map(h => '<p>' + esc(h[0]) + ': ' + esc(h[1]) + '</p>').join("") +
@@ -1483,7 +1487,7 @@ function checkoutHtml(){
   const ship = s >= SITE.shipping.freeFrom ? 0 : SITE.shipping.fee;
   const bank = has(SITE.bank.account)
     ? '<p><b>Ngân hàng:</b> ' + esc(SITE.bank.name) + '</p><p><b>Số tài khoản:</b> ' + esc(SITE.bank.account) + '</p><p><b>Chủ tài khoản:</b> ' + esc(SITE.bank.holder) + '</p>'
-    : '<p>' + ph("ngân hàng") + ' ' + ph("số tài khoản") + ' ' + ph("chủ tài khoản") + '</p><p class="muted">Chưa có thông tin chuyển khoản. Chú điền vào phần <b>SITE.bank</b> trong file để khách chuyển tiền được.</p>';
+    : '<p>' + ph("ngân hàng") + ' ' + ph("số tài khoản") + ' ' + ph("chủ tài khoản") + '</p><p class="muted">Chưa có thông tin chuyển khoản. Bạn điền vào phần <b>SITE.bank</b> trong file để khách chuyển tiền được.</p>';
   return (
   '<div class="wrap"><div class="chead"><h1>Thanh toán</h1></div>' +
   '<div class="split" style="padding-top:0;align-items:start"><div>' +
@@ -1496,7 +1500,7 @@ function checkoutHtml(){
     '<p style="margin-top:12px;font-size:13px;color:var(--green-t)">Hoặc chọn <b>thanh toán khi nhận hàng (COD)</b> — trả tiền cho shipper.</p>' +
     '<button class="btn full" style="margin-top:18px" onclick="toast(\'Đây là bản dựng thử — chưa nối cổng thanh toán.\')">Đặt hàng · ' + vnd(s + ship) + '</button>' +
   '</div><div style="background:#fff;padding:24px">' +
-    '<h2 style="font-size:20px;margin-bottom:14px">Đơn của chú</h2>' +
+    '<h2 style="font-size:20px;margin-bottom:14px">Đơn của bạn</h2>' +
     L.map(x => '<div style="display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:10px"><span>' + esc(x.p.name) + ' × ' + x.l.qty + '<br><span class="muted">' + esc(x.v[1]) + " · " + esc(x.l.c) + '</span></span><span>' + vnd(x.amount) + '</span></div>').join("") +
     '<div style="border-top:1px solid var(--line-d);margin-top:12px;padding-top:12px">' +
       '<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px"><span>Tạm tính</span><span>' + vnd(s) + '</span></div>' +
@@ -1511,17 +1515,17 @@ const POLICIES = {
    "Đơn từ " + "500.000₫" + " được miễn phí giao hàng toàn quốc. Dưới mức đó, phí giao cố định 30.000₫.",
    "Nội thành: 1–2 ngày làm việc. Tỉnh khác: 2–4 ngày làm việc. Đơn đặt sau 16h tính sang ngày làm việc kế tiếp.",
    "Trà được đóng túi kín có van một chiều, bọc chống ẩm. Hộp thiếc và hộp quà có thêm lớp đệm.",
-   "Chú nhận mã vận đơn qua tin nhắn ngay khi đơn rời kho."]},
+   "Bạn nhận mã vận đơn qua tin nhắn ngay khi đơn rời kho."]},
  "doi-tra":{ t:"Đổi trả", b:[
    "Nhận lại hàng trong 7 ngày kể từ khi nhận, với điều kiện bao bì còn nguyên niêm.",
-   "Trà đã mở gói: nếu vị không đúng mô tả trên web, chú nhắn cho chúng tôi — đổi lô khác hoặc hoàn tiền, chú không phải gửi trả.",
+   "Trà đã mở gói: nếu vị không đúng mô tả trên web, bạn nhắn cho chúng tôi — đổi lô khác hoặc hoàn tiền, bạn không phải gửi trả.",
    "Hàng vỡ, hỏng do vận chuyển: gửi ảnh, chúng tôi gửi bù ngay, không cần trả hàng cũ.",
    "Dụng cụ pha: đổi trong 14 ngày nếu còn nguyên hộp và chưa dùng."]},
  "bao-mat":{ t:"Bảo mật", b:[
    "Chúng tôi chỉ thu thập tên, số điện thoại, địa chỉ và email để giao hàng và liên hệ về đơn.",
-   "Không bán, không chia sẻ thông tin của chú cho bên thứ ba ngoài đơn vị vận chuyển.",
-   "Giỏ hàng lưu trên trình duyệt của chú, không gửi về máy chủ cho tới khi chú đặt hàng.",
-   "Chú có thể yêu cầu xóa thông tin bất cứ lúc nào qua trang liên hệ."]},
+   "Không bán, không chia sẻ thông tin của bạn cho bên thứ ba ngoài đơn vị vận chuyển.",
+   "Giỏ hàng lưu trên trình duyệt của bạn, không gửi về máy chủ cho tới khi bạn đặt hàng.",
+   "Bạn có thể yêu cầu xóa thông tin bất cứ lúc nào qua trang liên hệ."]},
  "dieu-khoan":{ t:"Điều khoản", b:[
    "Giá trên web đã gồm thuế, chưa gồm phí giao hàng.",
    "Ảnh sản phẩm chụp lô thật; màu nước trà có thể khác đôi chút tùy nguồn nước và cách pha.",
@@ -1669,7 +1673,7 @@ function buildChrome(){
     '<a class="item" href="#/brew">Cẩm nang pha trà</a>' +
     '<a class="item" href="#/contact">Liên hệ</a>' +
     '<div class="mfoot"><b>Cần tư vấn chọn trà?</b>' +
-      (has(SITE.phone) ? '<p>Gọi / Zalo: ' + esc(SITE.phone) + '</p>' : '<p>Nhắn cho chúng tôi cách chú hay uống trà, chúng tôi gợi ý đúng hai ba loại.</p>') +
+      (has(SITE.phone) ? '<p>Gọi / Zalo: ' + esc(SITE.phone) + '</p>' : '<p>Nhắn cho chúng tôi cách bạn hay uống trà, chúng tôi gợi ý đúng hai ba loại.</p>') +
       (has(SITE.email) ? '<p>' + esc(SITE.email) + '</p>' : "") +
       SITE.hours.map(x => '<p>' + esc(x[0]) + ': ' + esc(x[1]) + '</p>').join("") +
       '<a class="btn" href="#/contact">Liên hệ</a></div>';
@@ -1689,8 +1693,14 @@ function buildChrome(){
     '<a href="' + (has(SITE.zalo) ? SITE.zalo : "#/contact") + '" aria-label="' + k + '"><svg viewBox="0 0 24 24">' + socIco[k] + '</svg></a>').join("");
 
   $("#uspShip").textContent = "Miễn phí cho đơn từ " + vnd(SITE.shipping.freeFrom) + ". Dưới mức đó " + vnd(SITE.shipping.fee) + ".";
-  $("#uspPhone").innerHTML = has(SITE.phone) ? "Gọi hoặc nhắn Zalo " + esc(SITE.phone) : ("Nhắn cho chúng tôi cách chú hay uống trà. " + ph("số điện thoại"));
+  $("#uspPhone").innerHTML = has(SITE.phone) ? "Gọi hoặc nhắn Zalo " + esc(SITE.phone) : ("Nhắn cho chúng tôi cách bạn hay uống trà. " + ph("số điện thoại"));
   $("#uspMail").innerHTML  = has(SITE.email) ? esc(SITE.email) : ("Gửi tin nhắn qua trang liên hệ. " + ph("email"));
+  $("#ftp").innerHTML = REVIEWS.length
+    ? '<div class="row"><span class="stars"></span><b>' +
+        (REVIEWS.reduce((s,r) => s + (r.stars||5), 0) / REVIEWS.length).toFixed(1) + '/5</b></div>' +
+      '<p class="sub">Dựa trên ' + REVIEWS.length + ' đánh giá của người đã mua.</p>'
+    : '<p class="sub">Chúng tôi chỉ đăng đánh giá của người đã mua thật. Chưa có đánh giá nào — mua rồi kể lại giúp chúng tôi.</p>';
+  if(REVIEWS.length) $("#ftp .stars").innerHTML = Array.from({length:5}, () => "<i></i>").join("");
   $("#fcopy").textContent  = "© " + new Date().getFullYear() + " " + SITE.brandFull;
   $("#flegal").innerHTML   = has(SITE.legal) ? esc(SITE.legal) : ph("mã số thuế / giấy phép kinh doanh");
 
