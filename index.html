@@ -310,6 +310,7 @@ footer .mail button{padding:0 14px;color:#fff}
 .addrow .qty{height:48px}
 .addrow .qty button{width:40px;height:46px}
 .addrow .btn{flex:1;height:48px;padding:0 18px}
+@media(max-width:480px){.addrow .btn{font-size:11.5px;letter-spacing:.07em;padding:0 10px}.addrow .qty button{width:34px}}
 .share{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:12.5px;color:var(--green-t)}
 .share svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.4}
 .ptabs{display:flex;gap:26px;border-bottom:1px solid var(--line-d);margin-bottom:22px;overflow-x:auto;scrollbar-width:none}
@@ -422,6 +423,34 @@ footer .mail button{padding:0 14px;color:#fff}
 .faq .ab{display:none;padding:0 2px 18px;font-size:13.5px;color:var(--green-t)}
 .faq .ab.on{display:block}
 
+
+/* ---------- CAM KẾT TRÊN TRANG SẢN PHẨM ---------- */
+.promise{margin-top:18px;border:1px solid var(--line-d);background:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--green-t)}
+.promise>div{position:relative;padding-left:22px}
+.promise>div::before{content:"";position:absolute;left:0;top:5px;width:12px;height:7px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.monthly{margin-top:12px;font-size:13px;color:var(--green-t)}
+.monthly a{text-decoration:underline;font-weight:600}
+label.plan{display:flex}
+/* ---------- XÁC NHẬN ĐƠN ---------- */
+.odone{max-width:640px;margin:0 auto;padding:36px 0 50px;text-align:center}
+.odone h1{font-size:clamp(26px,3.4vw,38px);font-weight:600;margin-top:8px}
+.odone .lead{margin:14px auto 0;color:var(--green-t);font-size:14px}
+.codebox{display:inline-block;margin-top:16px;border:1px solid var(--green);padding:10px 18px;font-size:14px;color:var(--green-t);letter-spacing:.02em}
+.codebox b{font-family:var(--serif);font-size:19px;margin-left:6px}
+.paybox{background:#fff;border:1px solid var(--line);padding:22px 20px;margin-top:22px;text-align:left}
+.paybox h2{font-size:19px;font-weight:600;margin-bottom:10px}
+.paybox p{font-size:13.5px;color:var(--green-t);margin-bottom:8px}
+.paybox .btns{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 14px}
+.paybox pre,.donebox pre{white-space:pre-wrap;font:12.5px/1.6 var(--sans);background:var(--bg);padding:12px 14px;color:var(--ink);border:1px solid var(--line);margin-top:8px}
+.qr{width:220px;max-width:100%;margin:6px auto 12px;display:block;border:1px solid var(--line)}
+.donebox{margin-top:16px;background:var(--bg);border:1px solid var(--line-d);padding:16px;font-size:13.5px;color:var(--green-t)}
+.donebox b{display:block;margin-bottom:6px}
+.donebox .btns{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
+/* ---------- DANH SÁCH ĐƠN ---------- */
+.orders{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.orow{display:flex;justify-content:space-between;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);padding:14px 18px;font-size:13.5px;color:var(--green-t)}
+.orow:hover{border-color:var(--green)}
+
 /* ---------- TOAST + STICKY ---------- */
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--green-d);color:#fff;padding:12px 20px;font-size:13px;border-radius:var(--r);opacity:0;pointer-events:none;transition:.25s;z-index:120}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -514,7 +543,7 @@ body.has-sticky{padding-bottom:72px}
     </a>
     <div class="hr">
       <a href="#/search" aria-label="Tìm kiếm"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
-      <a href="#/contact" aria-label="Tài khoản"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></a>
+      <a href="#/orders" aria-label="Đơn của bạn"><svg class="ico" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></a>
       <button class="cartb" id="cartBtn" aria-label="Giỏ hàng">
         <svg class="ico" viewBox="0 0 24 24"><path d="M4 9h11a5 5 0 0 1 0 10H9a5 5 0 0 1-5-5V9Z"/><path d="M15 11h2.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 6c0-1 1-1.6 1-2.6"/></svg>
         <span class="cnt" id="cnt">0</span>
@@ -560,14 +589,7 @@ body.has-sticky{padding-bottom:72px}
     <div><h4>Cửa hàng</h4><ul id="fshop"></ul></div>
     <div><h4>Về chúng tôi</h4><ul id="fabout"></ul></div>
     <div><h4>Hỗ trợ</h4><ul id="fsupport"></ul></div>
-    <div class="sign">
-      <h4>Giảm giá cho đơn đầu tiên</h4>
-      <p>Đăng ký nhận tin: lô trà mới, hướng dẫn pha và ưu đãi riêng cho người đăng ký.</p>
-      <form class="mail" onsubmit="event.preventDefault();toast('Đã ghi nhận email. Cảm ơn bạn!');this.reset()">
-        <input type="email" required placeholder="Email của bạn" aria-label="Email">
-        <button type="submit" aria-label="Đăng ký"><svg class="ico" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg></button>
-      </form>
-    </div>
+    <div class="sign" id="fsign"></div>
   </div>
   <div class="fbot">
     <span>Việt Nam (VND ₫)</span>
@@ -626,7 +648,7 @@ const SITE = {
   anns:[
     "Miễn phí giao hàng cho đơn từ 500.000₫",
     "Tặng mẫu thử 10g cho đơn từ 300.000₫",
-    "Giảm 10% khi đăng ký nhận trà định kỳ"
+    "Nhận trà đều hàng tháng: giảm 10% — nhắn Zalo để đặt"
   ],
   photos:false,             // ẢNH: false = chưa có ảnh chụp thật → hero dùng nền xanh phẳng. Thay ảnh xong đổi thành true.
   phone:"", zalo:"", email:"", address:"", maps:"",
@@ -634,8 +656,10 @@ const SITE = {
   shipping:{ freeFrom:500000, fee:30000, hcm:"1–2 ngày", other:"2–4 ngày" },
   tinExtra:40000,           // phụ thu hộp thiếc
   subDiscount:0.10,         // giảm giá khi đăng ký định kỳ
-  credit:0.03,              // tích điểm mỗi đơn
-  bank:{ name:"", account:"", holder:"" },
+  nextOff:0.05,             // giảm cho đơn kế tiếp — mã in trên phiếu giao, không cần tài khoản
+  orderPrefix:"TDS",        // đầu mã đơn hàng
+  shelf:"12 tháng kể từ ngày đóng gói (in trên túi). Để nơi khô, kín, tránh nắng và mùi lạ.",
+  bank:{ name:"", account:"", holder:"", bin:"" },   // bin = mã VietQR của ngân hàng: VCB, TCB, MB, ACB, BIDV, VPB, TPB…
   legal:"",
   story:""                  // đoạn mở đầu trang "Câu chuyện"
 };
@@ -654,7 +678,7 @@ const REGIONS= [["ha-giang","Hà Giang"],["yen-bai","Yên Bái"],["son-la","Sơn
    ===================================================================== */
 const P = [
  { id:"p1", no:1, slug:"shan-tuyet-moc", name:"Shan Tuyết Mộc", type:"shan-tuyet", status:"available", badge:"Lô mới",
-   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026", packed:"",
    ingredients:"100% lá trà shan (Camellia sinensis var. assamica)", caffeine:"Trung bình",
    desc:"Lá shan sao khô, không ướp. Nước sánh, vị dày, uống được nhiều nước.",
    why:"Lô này được chọn vì cân bằng giữa vị dày và ngọt hậu — loại rõ ràng nhất để hiểu shan tuyết là gì.",
@@ -670,7 +694,7 @@ const P = [
    rec:{ "shan-tuyet-hoa":"Cùng vùng, hương hoa rõ hơn, nhẹ hơn.", "o-long-huong":"Cùng hướng ấm, gỗ — nhưng là ô long, tròn hơn." } },
 
  { id:"p2", no:2, slug:"shan-tuyet-hoa", name:"Shan Tuyết Hoa", type:"shan-tuyet", status:"limited", badge:"Lô giới hạn",
-   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026", packed:"",
    ingredients:"100% búp trà shan", caffeine:"Trung bình",
    desc:"Lô shan hái búp non, hương hoa rõ hơn, vị nhẹ hơn bản Mộc.",
    why:"Cho người đã quen shan tuyết và muốn lô tinh hơn: nhiều búp, hương hoa trắng nổi ngay nước đầu.",
@@ -685,7 +709,7 @@ const P = [
    rec:{ "shan-tuyet-moc":"Dày vị hơn, giá dễ hơn, cùng vùng.", "o-long-thanh":"Cùng hướng hoa, mềm và ngậy hơn." } },
 
  { id:"p3", no:3, slug:"o-long-thanh", name:"Ô Long Thanh", type:"o-long", status:"available", badge:"",
-   origin:"", regionNote:"", cultivar:"", harvest:"Hè 2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"Hè 2026", packed:"",
    ingredients:"100% trà ô long lên men nhẹ", caffeine:"Trung bình",
    desc:"Lên men nhẹ, vo viên. Nước xanh vàng, vị mềm, hợp uống buổi chiều.",
    why:"Ô long dễ vào nhất trong bộ sưu tập: mềm, ngậy, không chát — người mới nên bắt đầu từ đây.",
@@ -700,7 +724,7 @@ const P = [
    rec:{ "o-long-huong":"Lên men sâu hơn, ấm và ngọt đậm hơn.", "shan-tuyet-hoa":"Cùng hướng hoa, dày vị và khoáng hơn." } },
 
  { id:"p4", no:4, slug:"o-long-huong", name:"Ô Long Hương", type:"o-long", status:"available", badge:"",
-   origin:"", regionNote:"", cultivar:"", harvest:"2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"2026", packed:"",
    ingredients:"100% trà ô long sấy kỹ", caffeine:"Trung bình",
    desc:"Lên men sâu hơn, sấy kỹ. Vị ấm, ngọt, ít chát.",
    why:"Cho người thích chiều sâu và độ ấm — hợp ngày lạnh, sau bữa ăn, làm quà cho người lớn tuổi.",
@@ -715,7 +739,7 @@ const P = [
    rec:{ "o-long-thanh":"Nhẹ hơn, ngậy hơn — nếu bản này hơi đậm.", "shan-tuyet-moc":"Cùng hướng gỗ, mật — nhưng là shan, khoáng hơn." } },
 
  { id:"p5", no:5, slug:"tra-xanh-son", name:"Trà Xanh Sơn", type:"tra-xanh", status:"available", badge:"",
-   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"Xuân 2026", packed:"",
    ingredients:"100% trà xanh", caffeine:"Trung bình – cao",
    desc:"Diệt men bằng chảo, vò tay. Chát nhẹ đầu lưỡi, ngọt về sau.",
    why:"Trà xanh chuẩn vị Bắc để uống mỗi ngày: chát nhẹ đầu, ngọt sau — giá dễ nhất bộ sưu tập.",
@@ -730,7 +754,7 @@ const P = [
    rec:{ "o-long-thanh":"Muốn mềm hơn, không chát.", "tra-hoa-moc":"Cùng nền trà xanh, thêm hương hoa." } },
 
  { id:"p6", no:6, slug:"tra-hoa-moc", name:"Trà Hoa Mộc", type:"tra-hoa", status:"sold_out", badge:"",
-   origin:"", regionNote:"", cultivar:"", harvest:"2026",
+   origin:"", regionNote:"", cultivar:"", harvest:"2026", packed:"",
    ingredients:"Trà xanh, hoa tươi", caffeine:"Thấp – trung bình",
    desc:"Trà xanh ướp hoa tươi. Hương nhẹ, dễ uống, pha bình lớn hoặc ủ lạnh đều được.",
    why:"Trà để uống thoải mái: pha bình lớn, mời khách, ủ lạnh — không cần nghĩ nhiều.",
@@ -842,14 +866,13 @@ const NAV = [
     ["Kiến thức",[["Cẩm nang pha trà","#/brew"],["Bảng pha nhanh","#/brew"],["Ba lỗi hay gặp","#/brew"]]],
     ["Cập nhật",[["Nhật ký trà","#/journal"],["Lô mới về","#/c/lo-moi"]]]
  ]},
- { label:"Ưu đãi", href:"#/rewards" },
- { label:"Bán sỉ", href:"#/trade" }
+ { label:"Ưu đãi", href:"#/rewards" }
 ];
 
 const FOOT = {
   shop:[["Tất cả sản phẩm","#/c/tat-ca"],["Trà lá rời","#/c/tra-la-roi"],["Mẫu thử 10g","#/c/mau-thu"],["Dụng cụ pha trà","#/c/dung-cu"],["Quà tặng","#/c/qua-tang"],["Lô giới hạn","#/c/lo-gioi-han"]],
-  about:[["Câu chuyện","#/story"],["Cách chúng tôi chọn trà","#/story"],["Nhật ký trà","#/journal"],["Cẩm nang pha","#/brew"],["Bán sỉ & quà doanh nghiệp","#/trade"]],
-  support:[["Liên hệ","#/contact"],["Ưu đãi & tích điểm","#/rewards"],["Thông tin giao hàng","#/policy/giao-hang"],["Đổi trả","#/policy/doi-tra"],["Bảo mật","#/policy/bao-mat"],["Điều khoản","#/policy/dieu-khoan"]]
+  about:[["Câu chuyện","#/story"],["Cách chúng tôi chọn trà","#/story"],["Nhật ký trà","#/journal"],["Cẩm nang pha","#/brew"]  ],
+  support:[["Liên hệ","#/contact"],["Ưu đãi","#/rewards"],["Thông tin giao hàng","#/policy/giao-hang"],["Đổi trả","#/policy/doi-tra"],["Bảo mật","#/policy/bao-mat"],["Điều khoản","#/policy/dieu-khoan"]]
 };
 
 /* ---------- SLIDE TRANG CHỦ ---------- */
@@ -865,8 +888,8 @@ const HOMETILES = [
  { img:"cup",              t:"Chọn dụng cụ pha trà",    href:"#/c/dung-cu" }
 ];
 const HOMEBLOCKS = [
- { img:"gift-box",        t:"Ưu đãi & tích điểm", d:"Tích 3% mỗi đơn, đăng ký nhận trà định kỳ giảm thêm 10%.", href:"#/rewards" },
- { img:"cup",             t:"Bán sỉ & quà doanh nghiệp", d:"Trà cho quán, khách sạn, văn phòng và quà tặng số lượng lớn.", href:"#/trade" },
+ { img:"sampler",         t:"Uống thử trước, mua sau", d:"Mẫu thử 10g mỗi loại. Đơn từ 300.000₫ được tặng kèm một gói.", href:"#/c/mau-thu" },
+ { img:"gift-box",        t:"Không đúng vị — đổi hoặc hoàn tiền", d:"Đã mở gói uống rồi vẫn đổi được. Không cần gửi trả.", href:"#/policy/doi-tra" },
  { img:"tra-xanh-son-1",  t:"Cách chúng tôi chọn", d:"Mua theo lô, uống thử trước, nói rõ lô nào hợp với ai.", href:"#/story" }
 ];
 </script>
@@ -1128,7 +1151,7 @@ function productHtml(slug){
   if(!p) return '<div class="wrap"><div class="chead"><h1>Không tìm thấy sản phẩm</h1><p>Thử quay lại <a class="lnk" href="#/c/tat-ca">cửa hàng</a>.</p></div></div>';
   if(pSlug !== slug){ pSlug = slug; pVar = defVar(p)[0]; pCont = p.containers[0]; pPlan = "one"; pImg = 0; pTab = "mota"; pQty = 1; }
   const so = p.status === "sold_out";
-  const one = price(p, pVar, pCont, "one"), subp = price(p, pVar, pCont, "sub");
+  const one = price(p, pVar, pCont, "one");
   const rs = revOf(p);
   const recs = Object.keys(p.rec || {}).map(byslug).filter(Boolean);
   const alts = (recs.length ? recs : ALL.filter(x => x.id !== p.id && x.status !== "sold_out")).slice(0,2);
@@ -1164,24 +1187,23 @@ function productHtml(slug){
         p.vars.map(v => '<button class="' + (v[0]===pVar?"on":"") + '" onclick="pVar=\'' + v[0] + '\';render()">' + esc(v[1]) + '</button>').join("") +
       '</div></div>' +
 
-      '<div class="buybox">' +
-        '<div class="plan ' + (pPlan==="sub"?"on":"") + '" onclick="pPlan=\'sub\';render()">' +
-          '<span class="flag">Giảm ' + Math.round(SITE.subDiscount*100) + '%</span>' +
-          '<span class="dot"></span>' +
-          '<span class="t">Giao định kỳ<small>Chọn 1 / 2 / 3 tháng một lần. Hoãn hoặc dừng bất cứ lúc nào.</small></span>' +
-          '<span class="p"><s>' + vnd(one) + '</s>' + vnd(subp) + '</span></div>' +
-        '<div class="plan ' + (pPlan==="one"?"on":"") + '" onclick="pPlan=\'one\';render()">' +
-          '<span class="dot"></span>' +
-          '<span class="t">Mua một lần<small>Tích ' + Math.round(SITE.credit*100) + '% giá trị đơn vào lần mua sau.</small></span>' +
-          '<span class="p">' + vnd(one) + '</span></div>' +
-      '</div>' +
+      '<div class="opt"><div class="lab">Giá: <b>' + vnd(one) + '</b>' + (pCont === "Hộp thiếc" ? ' <span class="muted">(đã gồm hộp thiếc)</span>' : '') + '</div></div>' +
 
       '<div class="addrow">' +
         '<span class="qty"><button onclick="pQty=Math.max(1,pQty-1);render()" aria-label="Giảm">−</button><span>' + pQty + '</span><button onclick="pQty=pQty+1;render()" aria-label="Tăng">+</button></span>' +
-        (so ? '<button class="btn o" style="flex:1" onclick="toast(\'Cháu sẽ báo khi lô mới về.\')">Báo khi có hàng</button>'
-            : '<button class="btn" onclick="add(\'' + p.id + '\',pVar,pCont,pQty,pPlan)">Thêm vào giỏ · ' + vnd(price(p,pVar,pCont,pPlan) * pQty) + '</button>') +
+        (so ? '<a class="btn o" style="flex:1" href="#/contact">Báo tôi khi có lô mới</a>'
+            : '<button class="btn" onclick="add(\'' + p.id + '\',pVar,pCont,pQty,\'one\')">Thêm vào giỏ · ' + vnd(one * pQty) + '</button>') +
       '</div>' +
-      '<p style="margin-top:14px"><a class="lnk" href="#/policy/giao-hang">Thông tin giao hàng</a></p>' +
+
+      '<div class="promise">' +
+        '<div><b>Không đúng vị như mô tả?</b> Đổi lô khác hoặc hoàn tiền — đã mở gói uống rồi vẫn được, không cần gửi trả.</div>' +
+        '<div><b>Giao ' + esc(SITE.shipping.hcm) + ' nội thành, ' + esc(SITE.shipping.other) + ' tỉnh khác.</b> Miễn phí giao từ ' + vnd(SITE.shipping.freeFrom) + '.</div>' +
+        (sample(p) ? '<div><b>Chưa chắc?</b> Mẫu thử 10g ' + vnd(sample(p)[2]) + ' — pha được hai lần, uống rồi mới quyết gói lớn.</div>' : '') +
+        (has(p.packed) ? '<div><b>Đóng gói:</b> ' + esc(p.packed) + '. Hạn dùng ' + esc(SITE.shelf.split(" (")[0]) + '.</div>' : '<div><b>Hạn dùng:</b> ' + esc(SITE.shelf.split(".")[0]) + '.</div>') +
+      '</div>' +
+      '<p class="monthly">Muốn nhận đều mỗi tháng? Giảm ' + Math.round(SITE.subDiscount*100) + '% — ' +
+        (has(SITE.zalo) ? '<a href="' + SITE.zalo + '" target="_blank" rel="noopener">nhắn Zalo</a>' : '<a href="#/contact">nhắn cho chúng tôi</a>') + ' để đặt, dừng lúc nào cũng được.</p>' +
+      '<p style="margin-top:14px"><a class="lnk" href="#/policy/giao-hang">Thông tin giao hàng</a> &nbsp;·&nbsp; <a class="lnk" href="#/policy/doi-tra">Đổi trả</a></p>' +
       '<div class="share">Chia sẻ' +
         '<svg viewBox="0 0 24 24"><path d="M15 8a3 3 0 1 0-2.8-4M9 12a3 3 0 1 0-6 0 3 3 0 0 0 6 0Zm6 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/><path d="m9.2 10.6 5.6-3.2M9.2 13.4l5.6 3.2"/></svg>' +
         '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 20 6-8 4 4 3-3 3 4"/></svg>' +
@@ -1238,7 +1260,8 @@ function tabBody(p){
            (has(p.caffeine) ? '<p><b>Caffeine:</b> ' + esc(p.caffeine) + '</p>' : "") +
            (has(p.harvest) ? '<p><b>Mùa hái:</b> ' + esc(p.harvest) + '</p>' : "") +
            (has(p.cultivar) ? '<p><b>Giống:</b> ' + esc(p.cultivar) + '</p>' : (DEV ? '<p>' + ph("giống trà") + '</p>' : "")) +
-           '<p><b>Bảo quản:</b> để nơi khô, kín, tránh nắng và mùi lạ. Không để cạnh cà phê hay gia vị.</p>';
+           (has(p.packed) ? '<p><b>Ngày đóng gói:</b> ' + esc(p.packed) + '</p>' : (DEV ? '<p>' + ph("ngày đóng gói lô này") + '</p>' : "")) +
+           '<p><b>Hạn dùng & bảo quản:</b> ' + esc(SITE.shelf) + '</p>';
   if(pTab === "pha")
     return (has(p.steep) ? '<h2>Pha nóng</h2><p>' + esc(p.steep) + '</p>' : "") +
            (has(p.cold) ? '<h2>Ủ lạnh</h2><p>' + esc(p.cold) + '</p>' : "") +
@@ -1374,58 +1397,60 @@ function togAcc(b){ const body = b.nextElementSibling; body.classList.toggle("on
 
 /* ====================== ƯU ĐÃI ====================== */
 function rewardsHtml(){
+  const zl = has(SITE.zalo) ? '<a class="btn" href="' + SITE.zalo + '" target="_blank" rel="noopener">Nhắn Zalo để đặt</a>' : '<a class="btn" href="#/contact">Nhắn cho chúng tôi</a>';
   return (
-  '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Ưu đãi & tích điểm</div>' +
-  '<div class="banner" style="margin:18px 0 34px">' + (SITE.photos ? '<img src="' + img("gift-box") + '" alt="">' : "") + '' +
-    '<div class="in"><h2>Ưu đãi & tích điểm</h2><p>Tích ' + Math.round(SITE.credit*100) + '% mỗi đơn, dùng cho lần mua sau. Đăng ký nhận trà định kỳ giảm thêm ' + Math.round(SITE.subDiscount*100) + '%.</p>' +
-      '<div class="btns"><a class="btn w" href="#/c/tat-ca">Mua và tích điểm</a></div></div></div>' +
+  '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Ưu đãi</div>' +
+  '<div class="banner" style="margin:18px 0 34px">' + (SITE.photos ? '<img src="' + img("gift-box") + '" alt="">' : "") +
+    '<div class="in"><h2>Ưu đãi — không cần tài khoản</h2><p>Ba thứ chúng tôi làm được ngay, không bắt bạn đăng ký hay nhớ mật khẩu.</p>' +
+      '<div class="btns"><a class="btn w" href="#/c/tat-ca">Xem cửa hàng</a></div></div></div>' +
 
   '<div class="perks">' +
-    '<div><svg viewBox="0 0 24 24"><path d="m3 12 9-9 9 9-9 9-9-9Z"/><circle cx="12" cy="12" r="2.5"/></svg><h4>Giảm thêm ' + Math.round(SITE.subDiscount*100) + '%</h4><p>Áp dụng cho mọi đơn giao định kỳ.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Chọn nhịp giao</h4><p>1, 2 hoặc 3 tháng một lần, tùy bạn uống nhanh hay chậm.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><path d="M5 4h14v16l-7-4-7 4V4Z"/></svg><h4>Đổi loại bất cứ lúc nào</h4><p>Thêm, bớt hoặc đổi sang lô khác trước ngày giao.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6l12 12"/></svg><h4>Dừng lúc nào cũng được</h4><p>Không ràng buộc, không phí hủy, không gọi điện mời chào.</p></div>' +
+    '<div><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/></svg><h4>Tặng mẫu thử</h4><p>Đơn từ 300.000₫ được kèm một gói mẫu thử 10g loại bạn chưa mua.</p></div>' +
+    '<div><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><h4>Giảm ' + Math.round(SITE.nextOff*100) + '% đơn sau</h4><p>Mã giảm in trên phiếu giao. Nhắn mã khi đặt lần sau — không cần đăng nhập.</p></div>' +
+    '<div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Nhận đều hàng tháng −' + Math.round(SITE.subDiscount*100) + '%</h4><p>Nhắn loại trà và ngày nhận. Đến hẹn chúng tôi gửi, dừng lúc nào cũng được.</p></div>' +
+    '<div><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6l12 12"/></svg><h4>Không ràng buộc</h4><p>Không phí hủy, không gọi điện mời chào, không cần tài khoản.</p></div>' +
   '</div>' +
 
   '<div class="split"><div class="im"><img src="' + img("o-long-thanh-1") + '" alt=""></div>' +
-    '<div><h2>Giao định kỳ hoạt động thế nào</h2>' +
-      '<p>Chọn loại trà và nhịp giao ở trang sản phẩm. Đến hẹn, chúng tôi đóng gói lô đang có và gửi đi — bạn không phải đặt lại.</p>' +
-      '<p>Trước mỗi lần giao, bạn nhận tin nhắn báo trước 3 ngày. Muốn hoãn, đổi loại hoặc dừng thì nhắn lại là xong.</p>' +
-      '<p style="margin-top:18px"><a class="btn" href="#/c/tra-la-roi">Chọn trà để bắt đầu</a></p></div></div>' +
+    '<div><h2>Nhận trà đều mỗi tháng</h2>' +
+      '<p>Nhắn cho chúng tôi: loại trà, khối lượng, ngày muốn nhận. Đến hẹn, chúng tôi đóng gói lô đang có và gửi đi — bạn không phải đặt lại, giá giảm ' + Math.round(SITE.subDiscount*100) + '% so với mua lẻ.</p>' +
+      '<p>Muốn hoãn, đổi loại hoặc dừng: nhắn một câu là xong. Không có hợp đồng, không có phí gì.</p>' +
+      '<p style="margin-top:18px">' + zl + '</p></div></div>' +
 
   '<div class="split rev"><div class="im"><img src="' + img("sampler") + '" alt=""></div>' +
-    '<div><h2>Tích điểm mỗi đơn</h2>' +
-      '<p>Mỗi đơn tích ' + Math.round(SITE.credit*100) + '% giá trị vào tài khoản, dùng trừ thẳng cho lần mua sau. Đơn định kỳ tích ' + Math.round((SITE.credit+0.02)*100) + '%.</p>' +
-      '<p>Điểm có hạn dùng 6 tháng kể từ đơn gần nhất. Chúng tôi nhắc trước khi hết hạn.</p></div></div>' +
+    '<div><h2>Vì sao không có tích điểm, không có tài khoản</h2>' +
+      '<p>Chúng tôi chưa xây được hệ thống tài khoản tử tế, nên không hứa. Thay vào đó là mã giảm ' + Math.round(SITE.nextOff*100) + '% in thẳng trên phiếu giao — bạn cầm trên tay, không cần nhớ gì.</p>' +
+      '<p>Khi nào làm được tài khoản thật, chúng tôi báo. Còn giờ, thứ gì ghi trên trang này là thứ đang làm được.</p></div></div>' +
   '<div style="height:50px"></div></div>');
-}
-
-/* ====================== BÁN SỈ ====================== */
-function tradeHtml(){
-  return (
-  '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Bán sỉ</div>' +
-  '<div class="chead"><h1>Bán sỉ & quà doanh nghiệp</h1><p>Trà cho quán, khách sạn, văn phòng và quà tặng số lượng lớn. Giá theo lô, có mẫu thử trước khi đặt.</p></div>' +
-  '<div class="perks">' +
-    '<div><svg viewBox="0 0 24 24"><path d="M3 9h18v12H3z"/><path d="M3 9 6 4h12l3 5"/></svg><h4>Giá theo sản lượng</h4><p>Bậc giá rõ ràng từ 5kg trở lên.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><h4>Hợp đồng & hóa đơn</h4><p>Xuất hóa đơn đầy đủ, hợp đồng theo quý hoặc theo lô.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg><h4>Pha thử tại chỗ</h4><p>Chúng tôi tới pha thử và chỉnh công thức cho quán.</p></div>' +
-    '<div><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/></svg><h4>Quà in tên công ty</h4><p>Hộp, thiệp và nhãn in theo yêu cầu.</p></div>' +
-  '</div>' +
-  '<div class="split"><div class="im"><img src="' + img("gift-box") + '" alt=""></div>' +
-    '<div><h2>Gửi yêu cầu</h2>' +
-      '<p>Cho chúng tôi biết bạn cần bao nhiêu, dùng vào việc gì và khi nào cần. Chúng tôi gửi lại bảng giá và mẫu thử trong 1 ngày làm việc.</p>' +
-      contactForm("Gửi yêu cầu bán sỉ") + '</div></div>' +
-  '<div style="height:40px"></div></div>');
 }
 
 /* ====================== LIÊN HỆ ====================== */
 function contactForm(btnLabel){
-  return '<form onsubmit="event.preventDefault();toast(\'Đã gửi. Cháu sẽ liên hệ lại.\');this.reset()">' +
-    '<div class="field"><label>Tên</label><input required placeholder="Tên của bạn"></div>' +
-    '<div class="field"><label>Số điện thoại hoặc email</label><input required placeholder="Để chúng tôi liên hệ lại"></div>' +
-    '<div class="field"><label>Nội dung</label><textarea rows="4" placeholder="Bạn cần gì?"></textarea></div>' +
-    '<button class="btn" type="submit">' + esc(btnLabel) + '</button></form>';
+  return '<form id="cform" onsubmit="event.preventDefault();sendContact(this)">' +
+    '<div class="field"><label for="cf-name">Tên</label><input id="cf-name" required placeholder="Tên của bạn"></div>' +
+    '<div class="field"><label for="cf-phone">Số điện thoại hoặc email</label><input id="cf-phone" required placeholder="Để chúng tôi liên hệ lại"></div>' +
+    '<div class="field"><label for="cf-msg">Nội dung</label><textarea id="cf-msg" rows="4" placeholder="Bạn hay uống trà lúc nào, thích nhẹ hay đậm, hoa hay gỗ?"></textarea></div>' +
+    '<button class="btn" type="submit">' + esc(btnLabel) + '</button>' +
+    '<div id="cdone"></div></form>';
 }
+function sendContact(f){
+  const name = $("#cf-name").value.trim(), to = $("#cf-phone").value.trim(), msg = $("#cf-msg").value.trim();
+  const text = "Tên: " + name + "\nLiên hệ: " + to + "\nNội dung: " + msg;
+  const ways = [];
+  if(has(SITE.zalo))  ways.push('<a class="btn sm" href="' + SITE.zalo + '" target="_blank" rel="noopener" onclick="copyText(' + JSON.stringify(text).replace(/"/g,"&quot;") + ')">Mở Zalo (nội dung đã sao chép)</a>');
+  if(has(SITE.email)) ways.push('<a class="btn sm o" href="mailto:' + SITE.email + '?subject=' + encodeURIComponent("Liên hệ từ web — " + name) + '&body=' + encodeURIComponent(text) + '">Gửi qua email</a>');
+  $("#cdone").innerHTML = '<div class="donebox"><b>Đã ghi lại tin nhắn của bạn.</b>' +
+    (ways.length ? '<p>Để chắc chắn chúng tôi nhận được ngay, gửi thêm bằng một trong hai cách:</p><div class="btns">' + ways.join("") + '</div>'
+                 : '<p>Web này chưa nối hộp thư tự động. Sao chép nội dung dưới đây và gửi cho chúng tôi qua kênh liên hệ trên trang.</p>' +
+                   '<button class="btn sm o" type="button" onclick="copyText(' + JSON.stringify(text).replace(/"/g,"&quot;") + ')">Sao chép nội dung</button>') +
+    '<pre>' + esc(text) + '</pre></div>';
+}
+function copyText(t){
+  const done = () => toast("Đã sao chép.");
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, () => fallbackCopy(t, done));
+  else fallbackCopy(t, done);
+}
+function fallbackCopy(t, done){ const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); done(); }catch(e){} ta.remove(); }
 function contactHtml(){
   const info = [];
   if(has(SITE.phone)) info.push(["Gọi / Zalo", esc(SITE.phone)]); else if(DEV) info.push(["Gọi / Zalo", ph("số điện thoại")]);
@@ -1435,7 +1460,7 @@ function contactHtml(){
   '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Liên hệ</div>' +
   '<div class="chead"><h1>Liên hệ</h1><p>Chưa biết chọn loại nào? Nhắn cho chúng tôi cách bạn hay uống trà, chúng tôi gợi ý đúng hai hoặc ba loại — không gợi ý cả cửa hàng.</p></div>' +
   '<div class="split" style="padding-top:0"><div><h2>Thông tin cửa hàng</h2>' +
-    (info.length ? info.map(x => '<p><b>' + x[0] + ':</b> ' + x[1] + '</p>').join("") : '<p>Chúng tôi sẽ cập nhật thông tin liên hệ tại đây.</p>') +
+    (info.length ? info.map(x => '<p><b>' + x[0] + ':</b> ' + x[1] + '</p>').join("") : '<p>Nhanh nhất là điền form bên cạnh — chúng tôi trả lời trong 1 ngày làm việc.</p>') +
     '<h2 style="margin-top:26px">Giờ mở cửa</h2>' + SITE.hours.map(h => '<p>' + esc(h[0]) + ': ' + esc(h[1]) + '</p>').join("") +
   '</div><div><h2>Gửi tin nhắn</h2>' + contactForm("Gửi tin nhắn") + '</div></div>' +
   '<div style="height:40px"></div></div>');
@@ -1485,20 +1510,25 @@ function checkoutHtml(){
   const L = lines(), s = subtotal();
   if(!L.length) return cartHtml();
   const ship = s >= SITE.shipping.freeFrom ? 0 : SITE.shipping.fee;
-  const bank = has(SITE.bank.account)
-    ? '<p><b>Ngân hàng:</b> ' + esc(SITE.bank.name) + '</p><p><b>Số tài khoản:</b> ' + esc(SITE.bank.account) + '</p><p><b>Chủ tài khoản:</b> ' + esc(SITE.bank.holder) + '</p>'
-    : '<p>' + ph("ngân hàng") + ' ' + ph("số tài khoản") + ' ' + ph("chủ tài khoản") + '</p><p class="muted">Chưa có thông tin chuyển khoản. Bạn điền vào phần <b>SITE.bank</b> trong file để khách chuyển tiền được.</p>';
+  const hasBank = has(SITE.bank.account);
+  const d = coDraft;
   return (
-  '<div class="wrap"><div class="chead"><h1>Thanh toán</h1></div>' +
+  '<div class="wrap"><div class="chead"><h1>Thanh toán</h1><p>Điền địa chỉ, chọn cách trả tiền, bấm Đặt hàng — bạn nhận mã đơn ngay.</p></div>' +
   '<div class="split" style="padding-top:0;align-items:start"><div>' +
     '<h2 style="font-size:20px;margin-bottom:14px">Người nhận</h2>' +
-    '<div class="field"><label>Họ tên</label><input placeholder="Tên người nhận"></div>' +
-    '<div class="field"><label>Số điện thoại</label><input placeholder="Để shipper gọi"></div>' +
-    '<div class="field"><label>Địa chỉ</label><textarea rows="3" placeholder="Số nhà, đường, phường, quận, tỉnh/thành"></textarea></div>' +
-    '<div class="field"><label>Ghi chú cho đơn</label><textarea rows="2" placeholder="Giờ nhận, lời nhắn in kèm hộp quà…"></textarea></div>' +
-    '<h2 style="font-size:20px;margin:26px 0 12px">Thanh toán</h2>' + bank +
-    '<p style="margin-top:12px;font-size:13px;color:var(--green-t)">Hoặc chọn <b>thanh toán khi nhận hàng (COD)</b> — trả tiền cho shipper.</p>' +
-    '<button class="btn full" style="margin-top:18px" onclick="toast(\'Đây là bản dựng thử — chưa nối cổng thanh toán.\')">Đặt hàng · ' + vnd(s + ship) + '</button>' +
+    '<div class="field"><label for="co-name">Họ tên</label><input id="co-name" required value="' + esc(d.name) + '" placeholder="Tên người nhận"></div>' +
+    '<div class="field"><label for="co-phone">Số điện thoại</label><input id="co-phone" required inputmode="tel" value="' + esc(d.phone) + '" placeholder="Để shipper gọi khi giao"></div>' +
+    '<div class="field"><label for="co-addr">Địa chỉ</label><textarea id="co-addr" required rows="3" placeholder="Số nhà, đường, phường, quận, tỉnh/thành">' + esc(d.addr) + '</textarea></div>' +
+    '<div class="field"><label for="co-note">Ghi chú</label><textarea id="co-note" rows="2" placeholder="Giờ nhận, lời nhắn in kèm hộp quà, mã giảm giá…">' + esc(d.note) + '</textarea></div>' +
+    '<h2 style="font-size:20px;margin:26px 0 12px">Cách trả tiền</h2>' +
+    '<div class="buybox">' +
+      '<label class="plan ' + (d.pay==="cod"?"on":"") + '"><input class="sr" type="radio" name="co-pay" value="cod" ' + (d.pay==="cod"?"checked":"") + ' onchange="coDraft.pay=this.value;render()"><span class="dot"></span>' +
+        '<span class="t">Trả tiền khi nhận hàng<small>Đưa tiền cho shipper. Kiểm tra gói rồi mới trả.</small></span></label>' +
+      (hasBank ? '<label class="plan ' + (d.pay==="bank"?"on":"") + '"><input class="sr" type="radio" name="co-pay" value="bank" ' + (d.pay==="bank"?"checked":"") + ' onchange="coDraft.pay=this.value;render()"><span class="dot"></span>' +
+        '<span class="t">Chuyển khoản<small>Nhận mã QR và số tài khoản ngay sau khi đặt. Giao ngay khi tiền vào.</small></span></label>' : "") +
+    '</div>' +
+    '<button class="btn full" style="margin-top:18px" onclick="placeOrder()">Đặt hàng · ' + vnd(s + ship) + '</button>' +
+    '<p class="small muted" style="margin-top:10px">Bấm Đặt hàng là bạn đồng ý <a href="#/policy/dieu-khoan" style="text-decoration:underline">điều khoản</a> và <a href="#/policy/doi-tra" style="text-decoration:underline">chính sách đổi trả</a>.</p>' +
   '</div><div style="background:#fff;padding:24px">' +
     '<h2 style="font-size:20px;margin-bottom:14px">Đơn của bạn</h2>' +
     L.map(x => '<div style="display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:10px"><span>' + esc(x.p.name) + ' × ' + x.l.qty + '<br><span class="muted">' + esc(x.v[1]) + " · " + esc(x.l.c) + '</span></span><span>' + vnd(x.amount) + '</span></div>').join("") +
@@ -1506,7 +1536,80 @@ function checkoutHtml(){
       '<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px"><span>Tạm tính</span><span>' + vnd(s) + '</span></div>' +
       '<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px"><span>Giao hàng</span><span>' + (ship ? vnd(ship) : "Miễn phí") + '</span></div>' +
       '<div style="display:flex;justify-content:space-between;font-weight:700;color:var(--green-t)"><span>Tổng</span><span>' + vnd(s + ship) + '</span></div>' +
-    '</div></div></div><div style="height:40px"></div></div>');
+    '</div>' +
+    (ship ? '<p class="small muted" style="margin-top:12px">Thêm ' + vnd(SITE.shipping.freeFrom - s) + ' nữa là miễn phí giao. <a href="#/c/mau-thu" style="text-decoration:underline">Thêm mẫu thử?</a></p>' : "") +
+  '</div></div><div style="height:40px"></div></div>');
+}
+
+/* ---------- ĐẶT HÀNG ---------- */
+const OKEY = "tra-dac-san-orders-v1";
+let coDraft = { name:"", phone:"", addr:"", note:"", pay:"cod" };
+const readOrders = () => { try { return JSON.parse(localStorage.getItem(OKEY)) || []; } catch(e){ return []; } };
+function keepDraft(){ ["name","phone","addr","note"].forEach(k => { const e = $("#co-" + k); if(e) coDraft[k] = e.value; }); }
+function placeOrder(){
+  keepDraft();
+  const name = coDraft.name.trim(), phone = coDraft.phone.replace(/\s/g,""), addr = coDraft.addr.trim();
+  if(!name || !phone || !addr){ toast("Điền đủ tên, số điện thoại và địa chỉ giúp chúng tôi."); return; }
+  if(!/^0\d{9}$/.test(phone)){ toast("Số điện thoại chưa đúng — cần 10 số, bắt đầu bằng 0."); $("#co-phone").focus(); return; }
+  const L = lines(), s = subtotal(), ship = s >= SITE.shipping.freeFrom ? 0 : SITE.shipping.fee;
+  const d = new Date();
+  const code = SITE.orderPrefix + "-" + d.toISOString().slice(2,10).replace(/-/g,"") + "-" + Math.random().toString(36).slice(2,6).toUpperCase();
+  const o = { code:code, at:d.toISOString(), name:name, phone:phone, addr:addr, note:coDraft.note.trim(), pay:has(SITE.bank.account) ? coDraft.pay : "cod",
+    items:L.map(x => ({ name:x.p.name, v:x.v[1], c:x.l.c, qty:x.l.qty, unit:x.unit, amount:x.amount })), sub:s, ship:ship, total:s + ship };
+  const os = readOrders(); os.unshift(o);
+  try { localStorage.setItem(OKEY, JSON.stringify(os)); } catch(e){}
+  cart = []; save(); sync();
+  coDraft = { name:name, phone:phone, addr:addr, note:"", pay:coDraft.pay };
+  location.hash = "#/order/" + code;
+}
+function orderText(o){
+  return "ĐƠN " + o.code + "\n" +
+    o.items.map(i => "- " + i.name + " · " + i.v + " · " + i.c + " × " + i.qty + " = " + vnd(i.amount)).join("\n") + "\n" +
+    "Giao hàng: " + (o.ship ? vnd(o.ship) : "miễn phí") + "\nTỔNG: " + vnd(o.total) + "\n" +
+    "Thanh toán: " + (o.pay === "bank" ? "chuyển khoản" : "khi nhận hàng") + "\n" +
+    "Người nhận: " + o.name + " — " + o.phone + "\nĐịa chỉ: " + o.addr + (o.note ? "\nGhi chú: " + o.note : "");
+}
+function orderHtml(code){
+  const o = readOrders().find(x => x.code === code);
+  if(!o) return '<div class="wrap"><div class="chead"><h1>Không tìm thấy đơn ' + esc(code) + '</h1><p>Đơn được lưu trên trình duyệt đã đặt. Nếu bạn đặt trên máy khác, xem lại tin nhắn đã gửi cho chúng tôi.</p><p style="margin-top:18px"><a class="btn" href="#/c/tat-ca">Về cửa hàng</a></p></div></div>';
+  const text = orderText(o), jtext = JSON.stringify(text).replace(/"/g,"&quot;");
+  const b = SITE.bank, hasBank = has(b.account);
+  const qr = hasBank && has(b.bin)
+    ? '<img class="qr" alt="Mã VietQR" onerror="this.style.display=\'none\'" src="https://img.vietqr.io/image/' + encodeURIComponent(b.bin) + '-' + encodeURIComponent(b.account) + '-compact2.png?amount=' + o.total + '&addInfo=' + encodeURIComponent(o.code) + '&accountName=' + encodeURIComponent(b.holder) + '">' : "";
+  const ways = [];
+  if(has(SITE.zalo))  ways.push('<a class="btn" href="' + SITE.zalo + '" target="_blank" rel="noopener" onclick="copyText(' + jtext + ')">Gửi đơn qua Zalo</a>');
+  if(has(SITE.email)) ways.push('<a class="btn o" href="mailto:' + SITE.email + '?subject=' + encodeURIComponent("Đơn " + o.code) + '&body=' + encodeURIComponent(text) + '">Gửi qua email</a>');
+  ways.push('<button class="btn o" onclick="copyText(' + jtext + ')">Sao chép đơn</button>');
+  return (
+  '<div class="wrap"><div class="odone">' +
+    '<span class="eyebrow">Đã nhận đơn</span>' +
+    '<h1>Cảm ơn ' + esc(o.name) + '</h1>' +
+    '<div class="codebox">Mã đơn <b>' + esc(o.code) + '</b></div>' +
+    '<p class="lead">Chúng tôi sẽ gọi số <b>' + esc(o.phone) + '</b> để xác nhận trước khi giao.</p>' +
+
+    (o.pay === "bank"
+      ? '<div class="paybox"><h2>Chuyển khoản ' + vnd(o.total) + '</h2>' + qr +
+          '<p><b>' + esc(b.name) + '</b> · ' + esc(b.account) + '<br>' + esc(b.holder) + '</p>' +
+          '<p>Nội dung chuyển khoản: <b>' + esc(o.code) + '</b> <button class="lnk" style="border:0" onclick="copyText(\'' + o.code + '\')">sao chép</button></p>' +
+          '<p class="small muted">Tiền vào là chúng tôi đóng gói và gửi trong ngày làm việc kế tiếp.</p></div>'
+      : '<div class="paybox"><h2>Trả ' + vnd(o.total) + ' khi nhận hàng</h2><p>Kiểm tra gói còn nguyên niêm rồi mới đưa tiền cho shipper.</p></div>') +
+
+    '<div class="paybox"><h2>Gửi đơn cho chúng tôi</h2>' +
+      '<p>Đơn này đang lưu trên trình duyệt của bạn. Để chắc chắn chúng tôi nhận được ngay, bấm một nút dưới đây:</p>' +
+      '<div class="btns">' + ways.join("") + '</div>' +
+      '<pre>' + esc(text) + '</pre></div>' +
+
+    '<p class="small muted">Xem lại đơn bất cứ lúc nào ở mục <a href="#/orders" style="text-decoration:underline">Đơn của bạn</a> trên thanh đầu trang.</p>' +
+    '<p style="margin-top:18px"><a class="btn o" href="#/c/tat-ca">Tiếp tục xem trà</a></p>' +
+  '</div></div>');
+}
+function ordersHtml(){
+  const os = readOrders();
+  return '<div class="wrap"><div class="chead"><h1>Đơn của bạn</h1><p>Những đơn đã đặt trên trình duyệt này. Không cần tài khoản, không cần mật khẩu.</p></div>' +
+    (os.length
+      ? '<div class="orders">' + os.map(o => '<a class="orow" href="#/order/' + o.code + '"><span><b>' + esc(o.code) + '</b><br><span class="muted">' + new Date(o.at).toLocaleDateString("vi-VN") + ' · ' + o.items.length + ' món · ' + (o.pay === "bank" ? "chuyển khoản" : "khi nhận") + '</span></span><span><b>' + vnd(o.total) + '</b></span></a>').join("") + '</div>'
+      : '<p class="empty">Chưa có đơn nào trên máy này. <a href="#/c/tat-ca" style="text-decoration:underline">Xem cửa hàng</a>.</p>') +
+    '<div style="height:50px"></div></div>';
 }
 
 /* ====================== CHÍNH SÁCH ====================== */
@@ -1558,18 +1661,22 @@ function render(){
   else if(h[0] === "story")          html = storyHtml();
   else if(h[0] === "brew")           html = brewHtml();
   else if(h[0] === "rewards")        html = rewardsHtml();
-  else if(h[0] === "trade")          html = tradeHtml();
+  else if(h[0] === "trade")          html = contactHtml();
   else if(h[0] === "contact")        html = contactHtml();
+  else if(h[0] === "order")          html = orderHtml(h[1] || "");
+  else if(h[0] === "orders")         html = ordersHtml();
   else if(h[0] === "search")         html = searchHtml();
   else if(h[0] === "cart")           html = cartHtml();
   else if(h[0] === "checkout")       html = checkoutHtml();
   else if(h[0] === "policy")         html = policyHtml(h[1] || "");
   else                               html = homeHtml();
+  if(route.startsWith("checkout") && $("#co-name")) keepDraft();
   $("#main").innerHTML = html;
+  $("#toast").classList.remove("show");
   if(h[0] !== "c"){ colPage = 1; }
   if(h[0] !== "p"){ pSlug = ""; }
   const titles = { c:"Cửa hàng", p:"Sản phẩm", journal:"Nhật ký trà", story:"Câu chuyện", brew:"Cẩm nang pha trà",
-                   rewards:"Ưu đãi & tích điểm", trade:"Bán sỉ", contact:"Liên hệ", search:"Tìm kiếm", cart:"Giỏ hàng", checkout:"Thanh toán", policy:"Chính sách" };
+                   rewards:"Ưu đãi", trade:"Liên hệ", contact:"Liên hệ", search:"Tìm kiếm", cart:"Giỏ hàng", checkout:"Thanh toán", policy:"Chính sách", order:"Đơn hàng", orders:"Đơn của bạn" };
   let t = "";
   if(h[0] === "p" && byslug(h[1])) t = byslug(h[1]).name;
   else if(h[0] === "journal" && h[1]){ const a = ARTICLES.find(x => x.slug === h[1]); if(a) t = a.title; }
@@ -1588,7 +1695,7 @@ function setupSticky(p){
   if(!p || p.status === "sold_out"){ bar.classList.remove("on"); bar.innerHTML = ""; document.body.classList.remove("has-sticky"); return; }
   document.body.classList.add("has-sticky");
   bar.innerHTML = '<div class="t"><b>' + esc(p.name) + '</b><span>' + esc(varOf(p,pVar)[1]) + ' · ' + esc(pCont) + '</span></div>' +
-    '<button class="btn" onclick="add(\'' + p.id + '\',pVar,pCont,pQty,pPlan)">Thêm · ' + vnd(price(p,pVar,pCont,pPlan) * pQty) + '</button>';
+    '<button class="btn" onclick="add(\'' + p.id + '\',pVar,pCont,pQty,\'one\')">Thêm · ' + vnd(price(p,pVar,pCont,"one") * pQty) + '</button>';
   const anchor = $(".addrow");
   if(!anchor) return;
   stickyObs = new IntersectionObserver(es => {
@@ -1701,6 +1808,8 @@ function buildChrome(){
       '<p class="sub">Dựa trên ' + REVIEWS.length + ' đánh giá của người đã mua.</p>'
     : '<p class="sub">Chúng tôi chỉ đăng đánh giá của người đã mua thật. Chưa có đánh giá nào — mua rồi kể lại giúp chúng tôi.</p>';
   if(REVIEWS.length) $("#ftp .stars").innerHTML = Array.from({length:5}, () => "<i></i>").join("");
+  $("#fsign").innerHTML = '<h4>Lô mới về, báo trước</h4><p>Mỗi lô chỉ có một lần. Theo dõi để biết trước khi hết.</p>' +
+    (has(SITE.zalo) ? '<a class="btn w sm" href="' + SITE.zalo + '" target="_blank" rel="noopener">Nhắn Zalo để nhận tin</a>' : '<a class="btn w sm" href="#/contact">Để lại liên hệ</a>');
   $("#fcopy").textContent  = "© " + new Date().getFullYear() + " " + SITE.brandFull;
   $("#flegal").innerHTML   = has(SITE.legal) ? esc(SITE.legal) : ph("mã số thuế / giấy phép kinh doanh");
 
