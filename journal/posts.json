@@ -1,0 +1,232 @@
+{
+  "site": {
+    "name": "Trà Đặc Sản Việt Nam",
+    "url": "",
+    "note": "url: điền tên miền khi có, ví dụ https://tradacsan.vn — không có dấu / cuối. Chạy python3 tools/build.py sau khi sửa file này.",
+    "author": "Trà Đặc Sản Việt Nam",
+    "logo": "img/shan-tuyet-moc-1.jpg"
+  },
+  "posts": [
+    {
+      "slug": "festival-tra-shan-tuyet-lao-cai-2026",
+      "title": "Festival Trà Shan tuyết Lào Cai 2026 có gì",
+      "description": "Festival Trà Shan tuyết Lào Cai diễn ra 25–27/9/2026 tại Suối Giàng và Pang Cáng, xã Văn Chấn: lễ tôn vinh cây chè Tổ, thi hái chè, livestream sao chè thủ công.",
+      "cat": "Tin trà Việt",
+      "tags": [
+        "Tin trà Việt",
+        "Shan tuyết",
+        "Sự kiện"
+      ],
+      "date": "2026-10-02",
+      "updated": "2026-10-02",
+      "author": "",
+      "img": "shan-tuyet-moc-1",
+      "excerpt": "Ba ngày cuối tháng 9, vùng chè cổ thụ Suối Giàng mở hội: tôn vinh cây chè Tổ, thi hái chè, sao chè thủ công phát trực tiếp.",
+      "answer": "Festival Trà Shan tuyết Lào Cai 2026 diễn ra từ 25 đến 27/9/2026 tại thôn Suối Giàng và thôn Pang Cáng, xã Văn Chấn, tỉnh Lào Cai, do UBND xã Văn Chấn tổ chức. Điểm chính: lễ tôn vinh cây chè Tổ sáng 26/9, livestream sao chè thủ công lúc 10 giờ 26/9 và hội thi hái chè sáng 27/9.",
+      "body": "<p>Suối Giàng là một trong những vùng chè shan tuyết cổ thụ được nhắc tên nhiều nhất ở Việt Nam. Năm nay, lễ hội trà của vùng này diễn ra trong ba ngày, 25–27/9/2026, ở hai thôn Suối Giàng và Pang Cáng thuộc xã Văn Chấn, tỉnh Lào Cai.</p><h2>Lịch chính của ba ngày</h2><ul><li><b>Tối 25/9, 20 giờ:</b> đêm tiệc trà shan tuyết và hội thi trang phục dân tộc.</li><li><b>Sáng 26/9, 7–8 giờ:</b> lễ tôn vinh cây chè Tổ tại thôn Pang Cáng.</li><li><b>8 giờ 26/9:</b> khai mạc, trình diễn pha trà và biểu diễn nghệ thuật tại khu sự kiện Suối Giàng.</li><li><b>10 giờ 26/9:</b> livestream sao chè thủ công và bán sản phẩm — nghệ nhân và các cơ sở làm trà sao chè ngay tại chỗ, phát trực tiếp.</li><li><b>7 giờ 27/9:</b> hội thi hái chè.</li><li><b>Cả ba ngày:</b> phiên chợ ẩm thực văn hóa vùng cao, tuyến trải nghiệm rừng Mao Trúc và tham quan vùng chè.</li></ul><h2>Vì sao người mua trà nên để ý</h2><p>Hội thi hái chè và lễ tôn vinh cây chè Tổ rơi đúng mùa thu hái. Trà shan tuyết làm từ búp hái mùa này thường ra thị trường trong vài tuần sau đó — nếu bạn đang chờ lô thu, đây là lúc hỏi người bán về ngày hái và ngày sao.</p><p>Phần livestream sao chè là thứ đáng xem với người mới: nhìn lá tươi héo, vò, sao trên chảo nóng rồi thành sợi trà khô giúp hiểu vì sao cùng một cây lại ra nhiều vị khác nhau tùy tay người làm.</p><h2>Ban tổ chức nói gì</h2><p>Theo UBND xã Văn Chấn, festival nhằm “quảng bá giá trị cây chè Shan tuyết, văn hóa truyền thống và các sản phẩm đặc trưng của địa phương”. Báo Phụ nữ Việt Nam ghi nhận sự kiện “mở ra nhiều cơ hội quảng bá, nâng cao giá trị thương hiệu” cho trà di sản vùng cao.</p>",
+      "faq": [
+        {
+          "q": "Festival Trà Shan tuyết Lào Cai 2026 diễn ra khi nào, ở đâu?",
+          "a": "Từ 25 đến 27/9/2026 tại thôn Suối Giàng và thôn Pang Cáng, xã Văn Chấn, tỉnh Lào Cai."
+        },
+        {
+          "q": "Có mua được trà tại festival không?",
+          "a": "Có. Sáng 26/9 từ 10 giờ, các cơ sở làm trà sao chè thủ công và bán sản phẩm ngay tại chỗ, có phát trực tiếp để người ở xa đặt mua."
+        },
+        {
+          "q": "Trà shan tuyết Suối Giàng khác gì trà xanh thường?",
+          "a": "Shan tuyết hái từ cây chè cổ thụ vùng cao, lá to, búp phủ lông trắng. Nước sánh, vị dày, pha được nhiều nước hơn trà xanh đồng bằng."
+        }
+      ],
+      "sources": [
+        {
+          "t": "Bnews — Festival Trà Shan tuyết Lào Cai năm 2026 dự kiến diễn ra từ ngày 25/9 - 27/9",
+          "u": "https://bnews.vn/festival-tra-shan-tuyet-lao-cai-nam-2026-du-kien-dien-ra-tu-ngay-25-9-27-9/435808.html"
+        },
+        {
+          "t": "Phụ nữ Việt Nam — Festival Trà Shan tuyết Lào Cai năm 2026: Nâng tầm thương hiệu di sản vùng cao",
+          "u": "https://phunuvietnam.vn/festival-tra-shan-tuyet-lao-cai-nam-2026-nang-tam-thuong-hieu-di-san-vung-cao-238260908140331803.htm"
+        },
+        {
+          "t": "Thương hiệu & Công luận — Lào Cai tổ chức Festival Trà Shan tuyết 2026 tại Văn Chấn",
+          "u": "https://thuonghieucongluan.com.vn/lao-cai-to-chuc-festival-tra-shan-tuyet-2026-tai-van-chan-a333365.html"
+        }
+      ],
+      "products": [
+        {
+          "slug": "shan-tuyet-moc",
+          "name": "Shan Tuyết Mộc"
+        },
+        {
+          "slug": "shan-tuyet-hoa",
+          "name": "Shan Tuyết Hoa"
+        }
+      ]
+    },
+    {
+      "slug": "chau-au-tra-cao-cap-2026",
+      "title": "Châu Âu trả thêm cho trà rõ nguồn gốc",
+      "description": "Thị trường trà châu Âu 18,44 tỷ USD (2025), dự báo 31,07 tỷ USD năm 2034. Người mua sẵn sàng trả cao hơn cho trà có nguồn gốc rõ, cách chế biến minh bạch.",
+      "cat": "Tin trà thế giới",
+      "tags": [
+        "Tin trà thế giới",
+        "Thị trường"
+      ],
+      "date": "2026-10-02",
+      "updated": "2026-10-02",
+      "author": "",
+      "img": "o-long-thanh-1",
+      "excerpt": "Báo cáo mới: thị trường trà châu Âu tăng gần 6% mỗi năm tới 2034, phần tăng nằm ở trà cao cấp có nguồn gốc rõ ràng.",
+      "answer": "Theo báo cáo của Research and Markets công bố 30/9/2026, thị trường trà châu Âu đạt 18,44 tỷ USD năm 2025 và dự báo 31,07 tỷ USD năm 2034, tăng trung bình 5,97% mỗi năm. Người tiêu dùng sẵn sàng trả cao hơn cho trà có hương vị riêng, nguồn gốc xác minh được và cách sản xuất có trách nhiệm.",
+      "body": "<p>Ngày 30/9/2026, hãng nghiên cứu Research and Markets công bố báo cáo thị trường trà châu Âu giai đoạn 2026–2034. Ba con số đáng nhớ:</p><ul><li>Quy mô 2025: <b>18,44 tỷ USD</b>.</li><li>Dự báo 2034: <b>31,07 tỷ USD</b>.</li><li>Tăng trưởng bình quân: <b>5,97%/năm</b>.</li></ul><h2>Tiền tăng nằm ở đâu</h2><p>Báo cáo nói thẳng: người tiêu dùng châu Âu “ngày càng sẵn sàng trả tiền cho hương vị khác biệt, nguồn gốc được xác minh, nguyên liệu chất lượng cao và sản xuất có trách nhiệm”. Trà xanh được xếp vào nhóm tăng nhanh, kéo theo trà hữu cơ, matcha, trà lá rời cao cấp.</p><p>Với thị trường Đức, bốn thứ được nhắc là yếu tố quyết định mua: chứng nhận hữu cơ, nhãn thành phần sạch, nguồn gốc thật và bao bì thân thiện môi trường.</p><h2>Điều này nghĩa gì với trà Việt</h2><p>Trà Việt có sẵn thứ châu Âu đang trả tiền để mua: cây chè cổ thụ vùng cao, hái tay, sao tay, mỗi lô một vị. Thứ còn thiếu là cách kể: ghi rõ vùng trồng, mùa hái, cách làm, ai làm. Báo cáo kết luận các thương hiệu “truyền đạt được xuất xứ, phương pháp chế biến, chứng nhận hữu cơ và cam kết bền vững” sẽ ở vị trí tốt để bán được giá cao hơn.</p><p>Đó cũng là lý do trên trang này, mỗi lô trà đều ghi mùa hái, cách pha và hợp với ai — không phải để làm đẹp, mà vì người mua kỹ tính hỏi đúng những thứ đó.</p>",
+      "faq": [
+        {
+          "q": "Thị trường trà châu Âu lớn bao nhiêu?",
+          "a": "18,44 tỷ USD năm 2025, dự báo 31,07 tỷ USD năm 2034 (Research and Markets, 30/9/2026)."
+        },
+        {
+          "q": "Loại trà nào tăng nhanh ở châu Âu?",
+          "a": "Trà xanh được xếp vào nhóm tăng nhanh, cùng trà hữu cơ, matcha, trà thảo mộc và trà lá rời cao cấp."
+        },
+        {
+          "q": "Người châu Âu quan tâm gì khi mua trà?",
+          "a": "Nguồn gốc xác minh được, cách chế biến, chứng nhận hữu cơ, bao bì thân thiện môi trường — và sẵn sàng trả cao hơn cho những thứ đó."
+        }
+      ],
+      "sources": [
+        {
+          "t": "GlobeNewswire / Research and Markets — Europe Tea Market Size, Share, Trends, and Growth Forecast 2026-2034",
+          "u": "https://globenewswire.com/news-release/2026/09/30/3372184/28124/en/europe-tea-market-size-share-trends-and-growth-forecast-2026-2034-premium-functional-and-sustainable-teas-propel-5-97-cagr-toward-us-31-07-billion.html"
+        }
+      ],
+      "products": [
+        {
+          "slug": "tra-xanh-son",
+          "name": "Trà Xanh Sơn"
+        },
+        {
+          "slug": "shan-tuyet-moc",
+          "name": "Shan Tuyết Mộc"
+        }
+      ]
+    },
+    {
+      "slug": "pha-shan-tuyet",
+      "title": "Pha shan tuyết không chát: 3 con số",
+      "description": "Cách pha trà shan tuyết không chát: nước 90–95°C, 5g trà cho 150ml, nước đầu 20–30 giây rồi rót hết ra. Pha được 5–7 nước.",
+      "cat": "Cách pha",
+      "tags": [
+        "Cách pha",
+        "Shan tuyết"
+      ],
+      "date": "2026-09-12",
+      "updated": "2026-10-02",
+      "author": "",
+      "img": "shan-tuyet-moc-1",
+      "excerpt": "Ba thứ quyết định: nhiệt độ nước, thời gian nước đầu, và tỷ lệ trà.",
+      "answer": "Pha shan tuyết không chát cần ba con số: nước 90–95°C, 5g trà cho 150ml nước, nước đầu 20–30 giây rồi rót hết ra chén tống. Lá shan chịu nhiệt tốt, nên trà chát gần như luôn do ngâm quá lâu chứ không phải nước quá nóng.",
+      "body": "<p>Shan tuyết lá to, cần nước nóng để mở lá — nhưng ngâm lâu là chát. Quy tắc: nước 90–95°C, 5g cho 150ml, nước đầu 20–30 giây rồi rót hết ra.</p><h2>Vì sao trà bị chát</h2><p>Chát đến từ hai thứ: nước quá nóng với loại lá non, và ngâm quá lâu. Lá shan chịu nhiệt tốt nên vấn đề gần như luôn là thời gian.</p><p>Đừng để nước trong ấm. Rót hết ra chén tống ngay khi hết giờ — lá còn ngâm là nước sau còn đắng.</p><h2>Pha được bao nhiêu nước</h2><p>Lô shan tốt pha được 5–7 nước. Từ nước thứ ba trở đi cộng thêm 5–10 giây mỗi lần.</p><h2>Ủ lạnh thì sao</h2><p>6g trà cho 600ml nước lọc nguội, đậy kín, để ngăn mát 8 giờ rồi lọc bỏ lá. Nước trong, ngọt, gần như không chát.</p>",
+      "faq": [
+        {
+          "q": "Pha shan tuyết bao nhiêu độ?",
+          "a": "90–95°C. Đun sôi rồi để nguội khoảng 1–2 phút là vừa."
+        },
+        {
+          "q": "Ngâm nước đầu bao lâu?",
+          "a": "20–30 giây, rồi rót hết ra chén tống. Không để nước đọng trong ấm."
+        },
+        {
+          "q": "Shan tuyết pha được mấy nước?",
+          "a": "5–7 nước với lô tốt. Từ nước thứ ba, mỗi lần thêm 5–10 giây."
+        }
+      ],
+      "sources": [],
+      "products": [
+        {
+          "slug": "shan-tuyet-moc",
+          "name": "Shan Tuyết Mộc"
+        },
+        {
+          "slug": "chen-tong-thuy-tinh",
+          "name": "Chén tống thủy tinh 150ml"
+        }
+      ]
+    },
+    {
+      "slug": "chon-tra-cho-nguoi-moi",
+      "title": "Chọn trà khi chưa biết mình thích gì",
+      "description": "Cách chọn trà cho người mới: bắt đầu từ cách bạn uống — nhẹ hay đậm, hoa hay gỗ, sáng hay chiều — rồi mua mẫu thử 10g trước khi mua gói lớn.",
+      "cat": "Chọn trà",
+      "tags": [
+        "Chọn trà",
+        "Người mới"
+      ],
+      "date": "2026-09-08",
+      "updated": "2026-10-02",
+      "author": "",
+      "img": "sampler",
+      "excerpt": "Bắt đầu từ cách bạn uống, không phải từ tên trà.",
+      "answer": "Người mới nên chọn trà theo ba câu hỏi: uống lúc nào trong ngày, thích hương hoa hay hương gỗ, pha ấm nhỏ hay bình lớn. Chưa chắc thì mua mẫu thử 10g — đủ pha hai lần — uống hết rồi mới quyết gói lớn.",
+      "body": "<p>Câu đúng không phải “trà nào ngon nhất” mà là: bạn muốn tách trà như thế nào — nhẹ hay đậm, hoa hay gỗ, sáng hay chiều?</p><h2>Ba câu hỏi trước khi mua</h2><p>Uống lúc nào trong ngày? Thích hương hoa hay hương gỗ? Pha ấm nhỏ hay bình lớn? Ba câu đó đủ để loại một nửa bộ sưu tập.</p><ul><li><b>Buổi sáng, cần tỉnh:</b> trà xanh hoặc shan tuyết.</li><li><b>Buổi chiều, muốn mềm:</b> ô long lên men nhẹ.</li><li><b>Sau bữa tối, muốn ấm:</b> ô long lên men sâu.</li><li><b>Mời khách, pha bình lớn:</b> trà ướp hoa.</li></ul><h2>Chưa chắc thì sao</h2><p>Mua mẫu thử 10g. Uống hết một gói rồi mới quyết gói lớn — rẻ hơn mua nhầm 100g.</p>",
+      "faq": [
+        {
+          "q": "Người mới nên bắt đầu từ loại trà nào?",
+          "a": "Ô long lên men nhẹ: mềm, ngậy, không chát. Hoặc mua bộ mẫu thử ba vị để so sánh."
+        },
+        {
+          "q": "Mẫu thử 10g pha được mấy lần?",
+          "a": "Hai lần với ấm 150ml, mỗi lần 5g."
+        }
+      ],
+      "sources": [],
+      "products": [
+        {
+          "slug": "bo-mau-thu-3-vi",
+          "name": "Bộ mẫu thử 3 vị"
+        },
+        {
+          "slug": "o-long-thanh",
+          "name": "Ô Long Thanh"
+        }
+      ]
+    },
+    {
+      "slug": "o-long-khac-tra-xanh",
+      "title": "Ô long khác trà xanh ở đâu?",
+      "description": "Ô long và trà xanh cùng từ một cây chè, khác nhau ở bước lên men: trà xanh diệt men ngay, ô long để héo và lên men một phần nên có hương hoa, vị ngậy.",
+      "cat": "Kiến thức",
+      "tags": [
+        "Kiến thức",
+        "Ô long"
+      ],
+      "date": "2026-09-02",
+      "updated": "2026-10-02",
+      "author": "",
+      "img": "o-long-thanh-2",
+      "excerpt": "Cùng một cây, khác nhau ở một bước: lên men.",
+      "answer": "Ô long và trà xanh làm từ cùng một cây chè. Trà xanh diệt men ngay sau khi hái nên giữ màu xanh, vị tươi, chát nhẹ. Ô long để lá héo, lắc cho dập mép, lên men một phần rồi mới sao — bước đó tạo ra hương hoa và độ ngậy mà trà xanh không có.",
+      "body": "<p>Trà xanh diệt men ngay sau khi hái — giữ màu xanh, vị tươi, chát nhẹ. Ô long để lá héo, lắc cho dập mép, lên men một phần rồi mới sao.</p><h2>Bước đó đổi gì</h2><p>Lên men một phần tạo ra hương hoa và độ ngậy mà trà xanh không có. Ô long lên men nhẹ gần trà xanh; lên men sâu gần trà đen.</p><h2>Pha khác nhau thế nào</h2><p>Trà xanh sợ nước sôi: 80°C, 30 giây. Ô long chịu nhiệt hơn: 92–95°C, 40–45 giây, và pha được nhiều nước hơn (6–8 nước).</p><p>Cùng một cây trà, khác cách làm ra bốn loại khác nhau. Đó là lý do “trà gì” quan trọng hơn “trà ở đâu”.</p>",
+      "faq": [
+        {
+          "q": "Ô long có phải trà xanh không?",
+          "a": "Không. Cùng cây chè nhưng ô long lên men một phần, trà xanh không lên men."
+        },
+        {
+          "q": "Ô long hay trà xanh ít chát hơn?",
+          "a": "Ô long lên men nhẹ ít chát hơn, vị mềm và ngậy — hợp người mới."
+        }
+      ],
+      "sources": [],
+      "products": [
+        {
+          "slug": "o-long-thanh",
+          "name": "Ô Long Thanh"
+        },
+        {
+          "slug": "tra-xanh-son",
+          "name": "Trà Xanh Sơn"
+        }
+      ]
+    }
+  ]
+}
