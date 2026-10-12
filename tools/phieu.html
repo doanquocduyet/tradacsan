@@ -1,0 +1,201 @@
+<title>Phiếu điền Trà Đặc Sản</title>
+<style>
+:root{--green:#14433a;--green-t:#1c5647;--bg:#eef2f2;--card:#fff;--ink:#243330;--muted:#5f716c;--line:#d3ddda;--ok:#1d7a4f;--warn:#a05a00;
+--serif:'Playfair Display',Georgia,serif;--sans:system-ui,-apple-system,'Segoe UI',sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--green:#7cc2ad;--green-t:#9fd3c3;--bg:#0f1715;--card:#17211e;--ink:#e3ece9;--muted:#9aaba6;--line:#2b3a36;--ok:#5fc495;--warn:#e0a34a}}
+:root[data-theme="dark"]{--green:#7cc2ad;--green-t:#9fd3c3;--bg:#0f1715;--card:#17211e;--ink:#e3ece9;--muted:#9aaba6;--line:#2b3a36;--ok:#5fc495;--warn:#e0a34a}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0;padding-inline:16px;padding-block:20px 120px}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-family:var(--serif);color:var(--green-t);font-size:26px;margin:0;text-wrap:balance}
+h2{font-family:var(--serif);color:var(--green-t);font-size:19px;margin:0 0 4px}
+.lead{color:var(--muted);margin:6px 0 0;font-size:14.5px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:14px}
+.hint{font-size:13px;color:var(--muted);margin:0}
+label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:600;color:var(--green-t)}
+label small{font-weight:400;color:var(--muted);font-size:12.5px}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.row2{grid-template-columns:1fr}}
+details{border-top:1px solid var(--line);padding-top:12px}
+details:first-of-type{border-top:0;padding-top:0}
+summary{cursor:pointer;font-weight:700;color:var(--green-t);display:flex;justify-content:space-between;gap:10px;list-style:none}
+summary::after{content:"+";color:var(--muted)}details[open] summary::after{content:"−"}
+summary .st{font-weight:500;font-size:12.5px;color:var(--muted)}
+summary .st.full{color:var(--ok)}
+.prod{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.rv{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.rv .top{display:flex;justify-content:space-between;align-items:center}
+button{font:inherit;cursor:pointer;border-radius:8px}
+.add{background:none;border:1px dashed var(--green);color:var(--green);padding:11px;font-weight:600}
+.del{background:none;border:0;color:var(--warn);font-size:13px;text-decoration:underline;padding:4px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.bar .in{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.save{flex:0 0 auto;background:var(--green);color:var(--bg);border:0;padding:13px 22px;font-weight:700;font-size:15px}
+.save:disabled{opacity:.5;cursor:default}
+.msg{flex:1;font-size:13.5px;color:var(--muted)}
+.msg.ok{color:var(--ok)}.msg.err{color:var(--warn)}
+.prog{font-size:13px;color:var(--muted)}
+.prog b{color:var(--green-t)}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Phiếu điền thông tin web trà</h1>
+    <p class="lead">Chú điền ô nào biết chắc, ô nào chưa chắc thì để trống — web tự ẩn. Bấm <b>Lưu</b> ở cuối màn hình, cháu đọc phiếu và đưa lên web.</p>
+    <p class="prog" id="prog"></p>
+  </header>
+
+  <section>
+    <h2>Chuyển khoản</h2>
+    <p class="hint">Có số tài khoản thì khách chọn được "Chuyển khoản" và nhận mã QR tự điền số tiền.</p>
+    <label for="bankName">Ngân hàng
+      <select id="bankName">
+        <option value="">— chọn —</option>
+        <option value="VCB|Vietcombank">Vietcombank</option><option value="ICB|VietinBank">VietinBank</option>
+        <option value="BIDV|BIDV">BIDV</option><option value="VBA|Agribank">Agribank</option>
+        <option value="TCB|Techcombank">Techcombank</option><option value="MB|MB Bank">MB Bank</option>
+        <option value="ACB|ACB">ACB</option><option value="VPB|VPBank">VPBank</option>
+        <option value="TPB|TPBank">TPBank</option><option value="STB|Sacombank">Sacombank</option>
+        <option value="VIB|VIB">VIB</option><option value="SHB|SHB">SHB</option>
+        <option value="OCB|OCB">OCB</option><option value="MSB|MSB">MSB</option>
+        <option value="HDB|HDBank">HDBank</option><option value="SEAB|SeABank">SeABank</option>
+      </select>
+    </label>
+    <div class="row2">
+      <label for="bankAcc">Số tài khoản<input id="bankAcc" inputmode="numeric" autocomplete="off"></label>
+      <label for="bankHolder">Tên chủ tài khoản<small>viết hoa không dấu, như trên thẻ</small><input id="bankHolder" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cửa hàng</h2>
+    <div class="row2">
+      <label for="email">Email nhận đơn<input id="email" type="email" inputmode="email"></label>
+      <label for="address">Địa chỉ lấy hàng / cửa hàng<small>để trống nếu chỉ bán online</small><input id="address"></label>
+    </div>
+    <label for="legal">Hộ kinh doanh / mã số thuế<small>ví dụ: HKD Nguyễn Văn A — MST 0123456789</small><input id="legal"></label>
+    <label for="story">Câu chuyện của chú<small>3–5 câu: vì sao bán trà, trà lấy ở đâu, bán cho ai</small><textarea id="story" rows="4"></textarea></label>
+  </section>
+
+  <section>
+    <h2>Từng loại trà</h2>
+    <p class="hint">Khách khó tính hỏi đúng mấy thứ này. Ghi thật, không chắc thì bỏ trống.</p>
+    <div id="prods"></div>
+  </section>
+
+  <section>
+    <h2>Đánh giá thật của khách</h2>
+    <p class="hint">Chép nguyên văn tin nhắn khen/chê của khách đã mua. Chỉ ghi tên tắt nếu khách không muốn lộ tên.</p>
+    <div id="revs" style="display:flex;flex-direction:column;gap:10px"></div>
+    <button class="add" id="addRev" type="button">+ Thêm một đánh giá</button>
+  </section>
+</div>
+
+<div class="bar"><div class="in"><span class="msg" id="msg">Đang mở phiếu…</span><button class="save" id="save" type="button" disabled>Lưu</button></div></div>
+
+<script>
+const PRODUCTS = [
+  ["p1","Shan Tuyết Mộc"],["p2","Shan Tuyết Hoa"],["p3","Ô Long Thanh"],
+  ["p4","Ô Long Hương"],["p5","Trà Xanh Sơn"],["p6","Trà Hoa Mộc"]
+];
+const REGIONS = [["","— chưa biết —"],["ha-giang","Hà Giang"],["yen-bai","Yên Bái / Suối Giàng"],["son-la","Sơn La / Tà Xùa"],["thai-nguyen","Thái Nguyên"],["lam-dong","Lâm Đồng"],["khac","Vùng khác (ghi ở ô dưới)"]];
+const SHOP_FIELDS = ["bankAcc","bankHolder","email","address","legal","story"];
+const $ = id => document.getElementById(id);
+let reviews = [];
+let docRef = null;
+
+function prodsHtml(){
+  $("prods").innerHTML = PRODUCTS.map(([id,name]) => `
+    <details data-p="${id}">
+      <summary><span>${name}</span><span class="st" id="st-${id}"></span></summary>
+      <div class="prod">
+        <label for="${id}-origin">Vùng trồng<select id="${id}-origin">${REGIONS.map(r=>`<option value="${r[0]}">${r[1]}</option>`).join("")}</select></label>
+        <label for="${id}-regionNote">Vài dòng về vùng / người làm<small>độ cao, tuổi cây, ai sao trà</small><textarea id="${id}-regionNote" rows="2"></textarea></label>
+        <div class="row2">
+          <label for="${id}-cultivar">Giống trà<input id="${id}-cultivar"></label>
+          <label for="${id}-packed">Ngày đóng gói lô đang bán<input id="${id}-packed" placeholder="vd 15/09/2026"></label>
+        </div>
+      </div>
+    </details>`).join("");
+}
+function revsHtml(){
+  $("revs").innerHTML = reviews.map((r,i) => `
+    <div class="rv">
+      <div class="top"><b>Đánh giá ${i+1}</b><button class="del" type="button" data-del="${i}">Xoá</button></div>
+      <div class="row2">
+        <label for="rv${i}-pid">Trà nào<select id="rv${i}-pid" data-i="${i}" data-k="pid">${PRODUCTS.map(p=>`<option value="${p[0]}"${r.pid===p[0]?" selected":""}>${p[1]}</option>`).join("")}</select></label>
+        <label for="rv${i}-stars">Số sao<select id="rv${i}-stars" data-i="${i}" data-k="stars">${[5,4,3,2,1].map(n=>`<option value="${n}"${+r.stars===n?" selected":""}>${n} sao</option>`).join("")}</select></label>
+      </div>
+      <label for="rv${i}-name">Tên khách<input id="rv${i}-name" data-i="${i}" data-k="name" value="${esc(r.name)}"></label>
+      <label for="rv${i}-body">Khách nói gì<textarea id="rv${i}-body" rows="3" data-i="${i}" data-k="body">${esc(r.body)}</textarea></label>
+    </div>`).join("");
+}
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function collect(){
+  const b = $("bankName").value.split("|");
+  const out = { bank:{ bin:b[0]||"", name:b[1]||"", account:$("bankAcc").value.trim(), holder:$("bankHolder").value.trim() },
+    email:$("email").value.trim(), address:$("address").value.trim(), legal:$("legal").value.trim(), story:$("story").value.trim(),
+    products:{}, reviews: reviews.filter(r => (r.body||"").trim()), savedAt: new Date().toISOString() };
+  for(const [id] of PRODUCTS){
+    out.products[id] = { origin:$(id+"-origin").value, regionNote:$(id+"-regionNote").value.trim(), cultivar:$(id+"-cultivar").value.trim(), packed:$(id+"-packed").value.trim() };
+  }
+  return out;
+}
+function fill(d){
+  if(!d) return;
+  if(d.bank && d.bank.bin) $("bankName").value = d.bank.bin + "|" + d.bank.name;
+  $("bankAcc").value = d.bank?.account || ""; $("bankHolder").value = d.bank?.holder || "";
+  ["email","address","legal","story"].forEach(k => $(k).value = d[k] || "");
+  for(const [id] of PRODUCTS){ const p = (d.products||{})[id] || {}; ["origin","regionNote","cultivar","packed"].forEach(k => $(id+"-"+k).value = p[k] || ""); }
+  reviews = Array.isArray(d.reviews) ? d.reviews.map(r => ({...r})) : [];
+  revsHtml();
+}
+function progress(){
+  const d = collect(); let done = 0, total = 0;
+  const tick = v => { total++; if(v) done++; };
+  tick(d.bank.account && d.bank.holder && d.bank.bin); tick(d.email); tick(d.legal); tick(d.story);
+  for(const [id] of PRODUCTS){
+    const p = d.products[id]; const n = ["origin","regionNote","cultivar","packed"].filter(k => p[k]).length;
+    tick(p.origin); tick(p.packed);
+    const st = $("st-"+id); st.textContent = n ? n + "/4 ô" : "chưa điền"; st.classList.toggle("full", n === 4);
+  }
+  tick(d.reviews.length);
+  $("prog").innerHTML = `Đã điền <b>${done}/${total}</b> mục quan trọng.`;
+}
+
+prodsHtml(); revsHtml(); progress();
+document.addEventListener("input", e => {
+  const t = e.target;
+  if(t.dataset.i !== undefined){ reviews[+t.dataset.i][t.dataset.k] = t.value; }
+  progress();
+  if(docRef){ $("msg").className = "msg"; $("msg").textContent = "Có thay đổi chưa lưu."; }
+});
+document.addEventListener("change", e => { const t = e.target; if(t.dataset.i !== undefined) reviews[+t.dataset.i][t.dataset.k] = t.value; progress(); });
+$("revs").addEventListener("click", e => { const i = e.target.dataset.del; if(i === undefined) return; reviews.splice(+i,1); revsHtml(); progress(); });
+$("addRev").onclick = () => { reviews.push({pid:"p1",stars:5,name:"",body:""}); revsHtml(); progress(); $("rv"+(reviews.length-1)+"-name").focus(); };
+
+$("save").onclick = async () => {
+  if(!docRef) return;
+  $("save").disabled = true; $("msg").className = "msg"; $("msg").textContent = "Đang lưu…";
+  try {
+    await docRef.set(collect());
+    $("msg").className = "msg ok"; $("msg").textContent = "Đã lưu lúc " + new Date().toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}) + ". Nhắn cháu \"đã điền\" là xong.";
+  } catch(err){
+    $("msg").className = "msg err";
+    $("msg").textContent = err && err.code === "not_granted" ? "Phiếu này chỉ chủ web lưu được." : "Chưa lưu được — kiểm tra mạng rồi bấm Lưu lại.";
+  }
+  $("save").disabled = false;
+};
+
+(async () => {
+  const db = await window.claude?.use?.("db");
+  if(!db){ $("msg").className = "msg err"; $("msg").textContent = "Mở phiếu khi đã đăng nhập claude.ai để lưu được."; return; }
+  docRef = db.doc("phieu/du-lieu");
+  try { const s = await docRef.get(); if(s.exists) fill(s.data()); } catch(e){}
+  progress();
+  $("save").disabled = false; $("msg").className = "msg"; $("msg").textContent = "Điền xong bấm Lưu.";
+})();
+</script>
