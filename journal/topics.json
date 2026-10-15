@@ -1,25 +1,107 @@
 {
   "note": "Danh sách bài kiến thức cho lịch thứ 5. Mỗi tuần lấy chủ đề đầu tiên có status 'todo', viết xong đổi thành 'done' kèm slug. Thêm chủ đề mới thì nối vào cuối.",
   "topics": [
-    {"t": "Vùng chè Suối Giàng (Yên Bái): cây shan tuyết cổ thụ, độ cao, mùa hái", "q": "Trà Suối Giàng có gì đặc biệt?", "status": "todo"},
-    {"t": "Trà shan tuyết Hà Giang: Lũng Phìn, Cao Bồ, Tây Côn Lĩnh", "q": "Trà shan tuyết Hà Giang ở đâu ngon?", "status": "todo"},
-    {"t": "Chè Tà Xùa (Sơn La): vì sao gọi là trà trên mây", "q": "Chè Tà Xùa là gì?", "status": "todo"},
-    {"t": "Trà Thái Nguyên: Tân Cương, La Bằng, Trại Cài khác nhau thế nào", "q": "Trà Tân Cương khác trà Thái Nguyên thường ở đâu?", "status": "todo"},
-    {"t": "Trà sen Tây Hồ: cách ướp, vì sao đắt", "q": "Vì sao trà sen Tây Hồ đắt?", "status": "todo"},
-    {"t": "Ô long Lâm Đồng: giống Kim Tuyên, Thúy Ngọc, Tứ Quý", "q": "Ô long Việt Nam trồng ở đâu?", "status": "todo"},
-    {"t": "Cách nhận biết trà shan tuyết thật và trà trộn", "q": "Làm sao biết trà shan tuyết thật?", "status": "todo"},
-    {"t": "Đọc lá trà khô: màu, mùi, độ xoăn nói lên điều gì", "q": "Nhìn lá trà khô biết trà ngon không?", "status": "todo"},
-    {"t": "Bảo quản trà lá rời: hũ, túi, tủ lạnh, độ ẩm", "q": "Bảo quản trà thế nào để không mất hương?", "status": "todo"},
-    {"t": "Nước pha trà: nước máy, nước lọc, nước khoáng khác nhau ra sao", "q": "Pha trà bằng nước gì ngon nhất?", "status": "todo"},
-    {"t": "Caffeine trong trà: loại nào nhiều, loại nào ít, uống tối được không", "q": "Trà nào ít caffeine?", "status": "todo"},
-    {"t": "Trà xuân, trà hè, trà thu: hái mùa nào ngon nhất", "q": "Trà hái mùa nào ngon nhất?", "status": "todo"},
-    {"t": "Sáu loại trà: xanh, trắng, vàng, ô long, đen, phổ nhĩ", "q": "Có mấy loại trà?", "status": "todo"},
-    {"t": "Ấm đất, ấm sứ, ấm thủy tinh: pha trà nào bằng ấm nào", "q": "Nên dùng ấm gì để pha trà?", "status": "todo"},
-    {"t": "Ủ lạnh trà (cold brew): công thức cho từng loại", "q": "Cách ủ trà lạnh?", "status": "todo"},
-    {"t": "Chọn trà làm quà Tết: theo người nhận và ngân sách", "q": "Nên mua trà gì làm quà Tết?", "status": "todo"},
-    {"t": "Trà và sức khỏe: điều nghiên cứu nói thật và điều quảng cáo nói quá", "q": "Uống trà có tốt cho sức khỏe không?", "status": "todo"},
-    {"t": "Văn hóa trà Việt: chè tươi, chè mạn, trà đá, trà chiều", "q": "Người Việt uống trà thế nào?", "status": "todo"},
-    {"t": "Trà Việt xuất khẩu: đi đâu, giá bao nhiêu, vì sao rẻ hơn trà Trung Quốc", "q": "Trà Việt Nam xuất khẩu đi đâu?", "status": "todo"},
-    {"t": "Matcha và trà xanh Việt: khác gì, Việt Nam có làm matcha không", "q": "Matcha khác trà xanh thế nào?", "status": "todo"}
+    {
+      "t": "Vùng chè Suối Giàng (Yên Bái): cây shan tuyết cổ thụ, độ cao, mùa hái",
+      "q": "Trà Suối Giàng có gì đặc biệt?",
+      "status": "done",
+      "slug": "tra-suoi-giang-co-gi-dac-biet",
+      "date": "2026-10-15"
+    },
+    {
+      "t": "Trà shan tuyết Hà Giang: Lũng Phìn, Cao Bồ, Tây Côn Lĩnh",
+      "q": "Trà shan tuyết Hà Giang ở đâu ngon?",
+      "status": "todo"
+    },
+    {
+      "t": "Chè Tà Xùa (Sơn La): vì sao gọi là trà trên mây",
+      "q": "Chè Tà Xùa là gì?",
+      "status": "todo"
+    },
+    {
+      "t": "Trà Thái Nguyên: Tân Cương, La Bằng, Trại Cài khác nhau thế nào",
+      "q": "Trà Tân Cương khác trà Thái Nguyên thường ở đâu?",
+      "status": "todo"
+    },
+    {
+      "t": "Trà sen Tây Hồ: cách ướp, vì sao đắt",
+      "q": "Vì sao trà sen Tây Hồ đắt?",
+      "status": "todo"
+    },
+    {
+      "t": "Ô long Lâm Đồng: giống Kim Tuyên, Thúy Ngọc, Tứ Quý",
+      "q": "Ô long Việt Nam trồng ở đâu?",
+      "status": "todo"
+    },
+    {
+      "t": "Cách nhận biết trà shan tuyết thật và trà trộn",
+      "q": "Làm sao biết trà shan tuyết thật?",
+      "status": "todo"
+    },
+    {
+      "t": "Đọc lá trà khô: màu, mùi, độ xoăn nói lên điều gì",
+      "q": "Nhìn lá trà khô biết trà ngon không?",
+      "status": "todo"
+    },
+    {
+      "t": "Bảo quản trà lá rời: hũ, túi, tủ lạnh, độ ẩm",
+      "q": "Bảo quản trà thế nào để không mất hương?",
+      "status": "todo"
+    },
+    {
+      "t": "Nước pha trà: nước máy, nước lọc, nước khoáng khác nhau ra sao",
+      "q": "Pha trà bằng nước gì ngon nhất?",
+      "status": "todo"
+    },
+    {
+      "t": "Caffeine trong trà: loại nào nhiều, loại nào ít, uống tối được không",
+      "q": "Trà nào ít caffeine?",
+      "status": "todo"
+    },
+    {
+      "t": "Trà xuân, trà hè, trà thu: hái mùa nào ngon nhất",
+      "q": "Trà hái mùa nào ngon nhất?",
+      "status": "todo"
+    },
+    {
+      "t": "Sáu loại trà: xanh, trắng, vàng, ô long, đen, phổ nhĩ",
+      "q": "Có mấy loại trà?",
+      "status": "todo"
+    },
+    {
+      "t": "Ấm đất, ấm sứ, ấm thủy tinh: pha trà nào bằng ấm nào",
+      "q": "Nên dùng ấm gì để pha trà?",
+      "status": "todo"
+    },
+    {
+      "t": "Ủ lạnh trà (cold brew): công thức cho từng loại",
+      "q": "Cách ủ trà lạnh?",
+      "status": "todo"
+    },
+    {
+      "t": "Chọn trà làm quà Tết: theo người nhận và ngân sách",
+      "q": "Nên mua trà gì làm quà Tết?",
+      "status": "todo"
+    },
+    {
+      "t": "Trà và sức khỏe: điều nghiên cứu nói thật và điều quảng cáo nói quá",
+      "q": "Uống trà có tốt cho sức khỏe không?",
+      "status": "todo"
+    },
+    {
+      "t": "Văn hóa trà Việt: chè tươi, chè mạn, trà đá, trà chiều",
+      "q": "Người Việt uống trà thế nào?",
+      "status": "todo"
+    },
+    {
+      "t": "Trà Việt xuất khẩu: đi đâu, giá bao nhiêu, vì sao rẻ hơn trà Trung Quốc",
+      "q": "Trà Việt Nam xuất khẩu đi đâu?",
+      "status": "todo"
+    },
+    {
+      "t": "Matcha và trà xanh Việt: khác gì, Việt Nam có làm matcha không",
+      "q": "Matcha khác trà xanh thế nào?",
+      "status": "todo"
+    }
   ]
 }
