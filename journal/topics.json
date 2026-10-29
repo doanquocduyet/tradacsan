@@ -18,7 +18,9 @@
     {
       "t": "Chè Tà Xùa (Sơn La): vì sao gọi là trà trên mây",
       "q": "Chè Tà Xùa là gì?",
-      "status": "todo"
+      "status": "done",
+      "slug": "che-ta-xua-la-gi",
+      "date": "2026-10-29"
     },
     {
       "t": "Trà Thái Nguyên: Tân Cương, La Bằng, Trại Cài khác nhau thế nào",
