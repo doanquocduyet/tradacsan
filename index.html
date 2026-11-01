@@ -409,7 +409,7 @@ footer .mail button{padding:0 14px;color:#fff}
 .banner{position:relative;overflow:hidden;min-height:260px;display:flex;align-items:center;background:var(--green-d)}
 .banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
 .banner .in{position:relative;padding:clamp(28px,4vw,52px);max-width:620px}
-.banner h2{color:#fff;font-size:clamp(24px,3vw,34px);font-weight:600}
+.banner h1,.banner h2{color:#fff;font-size:clamp(24px,3vw,34px);font-weight:600}
 .banner p{color:#fff;margin-top:10px;font-size:14px;max-width:46ch}
 .banner .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
 
@@ -1064,7 +1064,7 @@ const FOOT = {
 
 /* ---------- SLIDE TRANG CHỦ ---------- */
 const SLIDES = [
- { h:"Mùa xuân đã về trong ấm", p:"Lô shan tuyết xuân 2026 vừa xuống núi. Hái búp non, sao trong ngày, đóng gói theo lô.", cta:["Xem lô mới","#/c/lo-moi"], img:"shan-tuyet-moc-1" },
+ { h:"Shan tuyết cho ngày se lạnh", p:"Vị dày, nước sánh, pha được nhiều nước. Hợp những buổi sáng đầu đông.", cta:["Xem shan tuyết","#/c/shan-tuyet"], img:"shan-tuyet-moc-1" },
  { h:"Chưa biết chọn? Thử 10g trước", p:"Ba hướng vị, ba gói mẫu thử. Uống hết rồi mới quyết gói lớn.", cta:["Xem mẫu thử","#/c/mau-thu"], img:"sampler" },
  { h:"Trà để làm quà, gói sẵn", p:"Hộp thiếc, thiệp viết tay, lời nhắn in kèm — gửi thẳng tới người nhận.", cta:["Xem quà tặng","#/c/qua-tang"], img:"gift-box" }
 ];
@@ -1588,7 +1588,7 @@ function rewardsHtml(){
   return (
   '<div class="wrap"><div class="crumb"><a href="#/">Trang chủ</a> / Ưu đãi</div>' +
   '<div class="banner" style="margin:18px 0 34px">' + (SITE.photos ? '<img src="' + img("gift-box") + '" alt="">' : "") +
-    '<div class="in"><h2>Ưu đãi — không cần tài khoản</h2><p>Ba thứ chúng tôi làm được ngay, không bắt bạn đăng ký hay nhớ mật khẩu.</p>' +
+    '<div class="in"><h1>Ưu đãi — không cần tài khoản</h1><p>Ba thứ chúng tôi làm được ngay, không bắt bạn đăng ký hay nhớ mật khẩu.</p>' +
       '<div class="btns"><a class="btn w" href="#/c/tat-ca">Xem cửa hàng</a></div></div></div>' +
 
   '<div class="perks">' +
@@ -2018,7 +2018,12 @@ function mTog(i){ const s = $("#ms" + i); if(s) s.classList.toggle("open"); }
 
 /* ====================== KHỞI ĐỘNG ====================== */
 buildChrome();
-addEventListener("hashchange", () => { render(); window.scrollTo({top:0}); });
+addEventListener("hashchange", () => {
+  /* đổi trang thì đóng giỏ, menu, tìm kiếm, bảng lọc đang mở */
+  if($("#drawer").classList.contains("open")) closeCart();
+  closeSheet(); closeSearch(); $("#mdraw").classList.remove("open");
+  render(); window.scrollTo({top:0});
+});
 render();
 </script>
 </body>
