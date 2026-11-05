@@ -25,7 +25,9 @@
     {
       "t": "Trà Thái Nguyên: Tân Cương, La Bằng, Trại Cài khác nhau thế nào",
       "q": "Trà Tân Cương khác trà Thái Nguyên thường ở đâu?",
-      "status": "todo"
+      "status": "done",
+      "slug": "tra-tan-cuong-khac-gi-tra-thai-nguyen",
+      "date": "2026-11-05"
     },
     {
       "t": "Trà sen Tây Hồ: cách ướp, vì sao đắt",
