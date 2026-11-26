@@ -39,7 +39,9 @@
     {
       "t": "Ô long Lâm Đồng: giống Kim Tuyên, Thúy Ngọc, Tứ Quý",
       "q": "Ô long Việt Nam trồng ở đâu?",
-      "status": "todo"
+      "status": "done",
+      "slug": "o-long-viet-nam-trong-o-dau",
+      "date": "2026-11-26"
     },
     {
       "t": "Cách nhận biết trà shan tuyết thật và trà trộn",
